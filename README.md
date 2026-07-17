@@ -4,7 +4,7 @@ English | [中文](languages/README_zh.md) | [Español](languages/README_es.md) 
 
 A lightweight browser extension that optimizes webpage fonts for comfortable reading. Change font family, size, and text colors with one click.
 
-> Chromium-based · Manifest V3 · Minimal Permissions · Fully Local
+> Chromium-based · Manifest V3 · Minimal Permissions · Local Only
 
 ---
 
