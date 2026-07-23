@@ -6,8 +6,9 @@
   <title>Support FontFixer</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: #f0f2f5;
       color: #333;
       min-height: 100vh;
@@ -16,6 +17,7 @@
       justify-content: center;
       padding: 24px;
     }
+
     .card {
       background: #fff;
       border-radius: 16px;
@@ -24,6 +26,8 @@
       width: 100%;
       overflow: hidden;
     }
+
+    /* ── Header banner ── */
     .banner {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       padding: 36px 40px 32px;
@@ -42,53 +46,139 @@
       justify-content: center;
       font-size: 32px;
       flex-shrink: 0;
+      backdrop-filter: blur(4px);
     }
-    .banner-text h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-    .banner-text p { font-size: 14px; opacity: 0.85; line-height: 1.5; }
-    .body { display: flex; gap: 0; }
-    .col { flex: 1; padding: 32px 36px; }
-    .col-left { border-right: 1px solid #eee; }
+    .banner-text h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .banner-text p {
+      font-size: 14px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    /* ── Body two-column ── */
+    .body {
+      display: flex;
+      gap: 0;
+    }
+
+    .col {
+      flex: 1;
+      padding: 28px 36px;
+    }
+    .col-left {
+      border-right: 1px solid #eee;
+    }
+
     .col h2 {
-      font-size: 15px; font-weight: 600; color: #667eea;
+      font-size: 15px;
+      font-weight: 600;
+      color: #667eea;
       margin-bottom: 14px;
     }
+
     .feature-list {
-      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     .feature-list li {
-      font-size: 14px; line-height: 1.6; color: #444;
-      padding-left: 22px; position: relative;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+      padding-left: 22px;
+      position: relative;
     }
     .feature-list li::before {
-      content: ''; position: absolute; left: 0; top: 8px;
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #667eea; opacity: 0.5;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #667eea;
+      opacity: 0.5;
     }
-    .thank-text { font-size: 14px; line-height: 1.8; color: #555; }
-    .thank-text p + p { margin-top: 12px; }
-    .thank-text .heart { color: #e74c3c; }
+
+    .thank-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+    }
+    .thank-text p + p {
+      margin-top: 12px;
+    }
+    .thank-text .heart {
+      color: #e74c3c;
+    }
+
+    /* ── CTA ── */
     .cta {
-      text-align: center; padding: 28px 36px 36px;
+      text-align: center;
+      padding: 28px 36px 36px;
       border-top: 1px solid #eee;
     }
-    .cta p { font-size: 13px; color: #888; margin-bottom: 16px; }
-    .support-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 36px; background: #667eea; color: #fff;
-      font-size: 16px; font-weight: 600; text-decoration: none;
-      border-radius: 10px; transition: all 0.2s ease;
-      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.35);
+    .cta .disclaimer {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 12px;
+      font-style: italic;
     }
-    .support-btn:hover {
-      background: #5a6fd6; transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    .cta p {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 16px;
     }
+
+    .kofi-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      background: #72a4f2;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(114, 164, 242, 0.35);
+    }
+    .kofi-btn:hover {
+      background: #5b8ee0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(114, 164, 242, 0.4);
+    }
+    .kofi-btn:active {
+      transform: translateY(0);
+    }
+    .kofi-btn .btn-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
     .footer {
-      text-align: center; padding: 16px 36px 20px;
-      font-size: 12px; color: #aaa;
+      text-align: center;
+      padding: 16px 36px 20px;
+      font-size: 12px;
+      color: #aaa;
     }
-    .footer a { color: #667eea; text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ── */
     @media (max-width: 640px) {
       body { padding: 12px; }
       .banner { padding: 24px 20px; flex-direction: column; text-align: center; }
@@ -101,6 +191,7 @@
 </head>
 <body>
   <div class="card">
+    <!-- Banner -->
     <div class="banner">
       <div class="banner-icon">🔤</div>
       <div class="banner-text">
@@ -109,24 +200,38 @@
       </div>
     </div>
 
+    <!-- Body: two columns -->
     <div class="body">
+      <!-- Left: features -->
       <div class="col col-left">
         <h2 data-i18n="featuresTitle"></h2>
         <ul class="feature-list" id="featureList"></ul>
       </div>
+
+      <!-- Right: thank you -->
       <div class="col">
         <h2 data-i18n="thankTitle"></h2>
         <div class="thank-text" id="thankText"></div>
       </div>
     </div>
 
+    <!-- CTA -->
     <div class="cta">
+      <p class="disclaimer" data-i18n="disclaimer"></p>
       <p data-i18n="ctaHint"></p>
-      <a class="support-btn" href="https://ko-fi.com/annmax?ref=fontfixer" target="_blank" rel="noopener">
-        <img src="./assets/coffee.png" alt="" width="28" height="22" style="vertical-align:middle;margin-right:6px"> <span data-i18n="btnText"></span>
+      <a class="kofi-btn" href="https://ko-fi.com/annmax?buyACoffee=true&ref=fontfixer" target="_blank" rel="noopener">
+        <svg class="btn-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+          <line x1="6" y1="1" x2="6" y2="4"/>
+          <line x1="10" y1="1" x2="10" y2="4"/>
+          <line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+        <span data-i18n="btnText"></span>
       </a>
     </div>
 
+    <!-- Footer -->
     <div class="footer">
       <a href="https://github.com/annmax1983/FontFixer" target="_blank" rel="noopener">GitHub</a>
       &nbsp;·&nbsp;
@@ -136,94 +241,174 @@
   </div>
 
   <script>
+    // ============================================================
+    //  i18n — 6 languages
+    // ============================================================
     const I18N = {
       zh: {
-        tagline: '网页字体阅读优化 · 一键切换 · 实时预览 · 完全本地',
+        tagline: '优化网页字体 · 提升阅读体验 · 一键切换 · 完全本地',
         featuresTitle: '✨ 功能特色',
-        features: ['读取本机已安装字体列表', '字号缩放 80%~160% 实时预览', '自定义文字色与链接色', '按站点独立保存字体配置', '一键排除指定网站', '完全本地处理，零网络请求'],
+        features: [
+          '读取本机已安装字体，含 CJK 字体中文标注',
+          '内置 Noto Sans、思源黑体、Arial 三款字体',
+          '字号缩放 80%~160%，实时预览',
+          '自定义文字颜色与链接颜色',
+          '按站点独立保存配置，也支持全局模式',
+          'Manifest V3 · 完全本地处理，零网络请求'
+        ],
         thankTitle: '💌 想对你说',
-        thank: ['感谢你使用 FontFixer。做这个工具是因为我经常遇到网站字体模糊、太小、难看的问题。', '如果它也帮到了你，那对我来说就是最好的回报。', '当然，如果你愿意请我喝一杯咖啡 <span class="heart">☕</span>，我会非常开心——这会让我更有动力继续打磨它。'],
-        ctaHint: '点击下方按钮，跳转到支持页面',
-        btnText: 'Support My Work',
-        privacyPolicy: '隐私条款'
+        thank: [
+          '感谢你使用 FontFixer。做这个小工具，是因为我经常遇到网站字体模糊、太小、难看的问题。',
+          '如果它也帮到了你，那对我来说就是最好的回报。',
+          '如果你愿意请我喝一杯咖啡 <span class="heart">☕</span>，我会非常开心——这会让我更有动力继续打磨它。'
+        ],
+        disclaimer: 'Ko-fi 赞助为自愿行为，不影响任何功能使用。赞助与扩展功能无绑定关系，仅为用户自发支持。',
+        ctaHint: '点击下方按钮，跳转到 Ko-fi 支持页面',
+        btnText: 'Buy Me a Coffee',
+        privacyPolicy: '隐私政策'
       },
       en: {
-        tagline: 'Web font reading optimizer · One-click switch · Real-time preview · Fully local',
+        tagline: 'Optimize web fonts · Improve reading comfort · One-click switch · Fully local',
         featuresTitle: '✨ Features',
-        features: ['Read all fonts installed on your device', 'Font size scaling 80%-160% with real-time preview', 'Custom text color and link color', 'Per-site font settings saved independently', 'One-click exclude specific websites', 'Fully local processing, zero network requests'],
+        features: [
+          'Reads all fonts installed on your device, with CJK name annotations',
+          '3 built-in fonts: Noto Sans, Source Han Sans, Arial',
+          'Font size scaling 80%~160% with real-time preview',
+          'Custom text color and link color',
+          'Per-site settings saved independently, plus global mode',
+          'Manifest V3 · Fully local, zero network requests'
+        ],
         thankTitle: '💌 A Note to You',
-        thank: ['Thank you for using FontFixer. I built this tool because I often encountered websites with blurry, small, or ugly fonts.', 'If it helps you too, that\'s already the best reward I could ask for.', 'Of course, if you\'d like to <span class="heart">☕</span> buy me a coffee, it would truly make my day — and keep me motivated to make FontFixer even better.'],
-        ctaHint: 'Click the button below to visit the support page',
-        btnText: 'Support My Work',
+        thank: [
+          'Thank you for using FontFixer. I built this tool because I often encountered websites with blurry, small, or ugly fonts.',
+          'If it helps you read more comfortably, that\'s already the best reward I could ask for.',
+          'If you\'d like to <span class="heart">☕</span> buy me a coffee, I\'d really appreciate it — it keeps me motivated to make FontFixer even better.'
+        ],
+        disclaimer: 'Ko-fi sponsorship is purely voluntary and does not affect any features. Sponsorship has no binding to extension functionality — it is solely user-initiated support.',
+        ctaHint: 'Click the button below to visit the Ko-fi support page',
+        btnText: 'Buy Me a Coffee',
         privacyPolicy: 'Privacy Policy'
       },
       ja: {
-        tagline: 'Webフォント閲覧最適化 · ワンクリック切替 · リアルタイムプレビュー · 完全ローカル',
+        tagline: 'Webフォント最適化 · 閲覧体験向上 · ワンクリック切替 · 完全ローカル',
         featuresTitle: '✨ 機能紹介',
-        features: ['デバイスにインストールされた全フォントを読み取り', 'フォントサイズ80%~160%のリアルタイムプレビュー', 'カスタム文字色とリンク色', 'サイトごとにフォント設定を独立保存', 'ワンクリックで特定サイトを除外', '完全ローカル処理、ネットワークリクエストなし'],
+        features: [
+          'デバイスにインストールされたフォントを全読み取り、CJKフォントの中文表示対応',
+          'Noto Sans・源ノ黒体・Arial の3種を内蔵',
+          'フォントサイズ 80%~160% リアルタイムプレビュー',
+          '文字色とリンク色のカスタマイズ',
+          'サイトごとに設定を保存、グローバルモードにも対応',
+          'Manifest V3 · 完全ローカル処理、ネットワークリクエストなし'
+        ],
         thankTitle: '💌 ご利用ありがとうございます',
-        thank: ['FontFixerをご利用いただきありがとうございます。このツールは、ウェブサイトのフォントがぼやけていたり、小さかったり、見にくかったりする問題に经常遭遇して作りました。', 'もし皆様のお役にも立てているなら、それが何よりの喜びです。', 'もしよろしければ、コーヒーを <span class="heart">☕</span> 一杯おごっていただけると、とても嬉しいです。'],
-        ctaHint: '下のボタンをクリックするとサポートページに移動します',
-        btnText: 'Support My Work',
+        thank: [
+          'FontFixerをご利用いただきありがとうございます。このツールは、ウェブサイトのフォントがぼやけて小さかったり、見にくかったりする問題に frequently 遭遇して作りました。',
+          'もし皆様のお役にも立てているなら、それが何よりの喜びです。',
+          'もしよろしければ、コーヒーを <span class="heart">☕</span> 一杯おごっていただけると、とても嬉しいです。FontFixerの改善の励みになります。'
+        ],
+        disclaimer: 'Ko-fi は純粋な任意のスポンサー십です。機能に一切影響せず、スポンサー십と拡張機能は無関係です。ユーザーの自発的なサポートのみです。',
+        ctaHint: '下のボタンをクリックすると Ko-fi サポートページに移動します',
+        btnText: 'Buy Me a Coffee',
         privacyPolicy: 'プライバシーポリシー'
       },
       de: {
-        tagline: 'Web-Schriften-Leser · Ein-Klick-Umschaltung · Echtzeit-Vorschau · Vollständig lokal',
+        tagline: 'Web-Schriften optimieren · Lesekomfort verbessern · Ein-Klick-Umschaltung · Vollständig lokal',
         featuresTitle: '✨ Funktionen',
-        features: ['Alle auf dem Gerät installierten Schriften auslesen', 'Schriftgröße 80%-160% mit Echtzeit-Vorschau', 'Benutzerdefinierte Text- und Linkfarbe', 'Websitespezifische Schrifteinstellungen', 'Ein-Klick-Ausschluss bestimmter Websites', 'Vollständig lokale Verarbeitung, keine Netzwerkanfragen'],
+        features: [
+          'Liest alle auf dem Gerät installierten Schriften mit CJK-Namen-Anmerkungen',
+          '3 integrierte Schriften: Noto Sans, Source Han Sans, Arial',
+          'Schriftgröße 80%~160% mit Echtzeit-Vorschau',
+          'Benutzerdefinierte Text- und Linkfarbe',
+          'Website-spezifische Einstellungen plus Globaler Modus',
+          'Manifest V3 · Vollständig lokale Verarbeitung, keine Netzwerkanfragen'
+        ],
         thankTitle: '💌 Ein paar Worte an Sie',
-        thank: ['Vielen Dank, dass Sie FontFixer nutzen. Ich habe dieses Tool gebaut, weil ich oft auf Webseiten mit unscharfen, kleinen oder hässlichen Schriften gestoßen bin.', 'Wenn es auch Ihnen hilft, ist das die beste Belohnung.', 'Wenn Sie mir gerne einen <span class="heart">☕</span> Kaffee ausgeben möchten, würde mich das sehr freuen.'],
-        ctaHint: 'Klicken Sie auf die Schaltfläche unten, um zur Support-Seite zu gelangen',
-        btnText: 'Support My Work',
+        thank: [
+          'Vielen Dank, dass Sie FontFixer nutzen. Ich habe dieses Tool gebaut, weil ich oft auf Webseiten mit unscharfen, kleinen oder hässlichen Schriften gestoßen bin.',
+          'Wenn es auch Ihnen das Lesen erleichtert, ist das die beste Belohnung.',
+          'Wenn Sie mir gerne einen <span class="heart">☕</span> Kaffee ausgeben möchten, würde mich das sehr freuen — es motiviert mich, FontFixer noch besser zu machen.'
+        ],
+        disclaimer: 'Ko-fi-Sponsoring ist rein freiwillig und beeinträchtigt keine Funktionen. Das Sponsoring hat keinen Einfluss auf die Erweiterungsfunktionen — es ist ausschließlich eine freiwillige Unterstützung durch die Nutzer.',
+        ctaHint: 'Klicken Sie auf die Schaltfläche unten, um zur Ko-fi-Support-Seite zu gelangen',
+        btnText: 'Buy Me a Coffee',
         privacyPolicy: 'Datenschutzrichtlinie'
       },
       es: {
-        tagline: 'Optimizador de fuentes web · Cambio con un clic · Vista previa en tiempo real · Completamente local',
+        tagline: 'Optimiza fuentes web · Mejora la lectura · Cambio con un clic · Completamente local',
         featuresTitle: '✨ Características',
-        features: ['Lee todas las fuentes instaladas en tu dispositivo', 'Escala de tamaño 80%-160% con vista previa en tiempo real', 'Color de texto y enlace personalizados', 'Configuración de fuente por sitio guardada independientemente', 'Excluir sitios específicos con un clic', 'Procesamiento completamente local, sin solicitudes de red'],
+        features: [
+          'Lee todas las fuentes instaladas en tu dispositivo, con anotaciones CJK',
+          '3 fuentes integradas: Noto Sans, Source Han Sans, Arial',
+          'Escala de tamaño 80%~160% con vista previa en tiempo real',
+          'Color de texto y enlace personalizados',
+          'Configuración por sitio guardada independientemente, más modo global',
+          'Manifest V3 · Procesamiento completamente local, sin solicitudes de red'
+        ],
         thankTitle: '💌 Unas palabras para ti',
-        thank: ['Gracias por usar FontFixer. Construí esta herramienta porque frecuentemente encontraba sitios web con fuentes borrosas, pequeñas o feas.', 'Si también te ayuda a ti, esa ya es la mejor recompensa.', 'Por supuesto, si quieres invitarme a un <span class="heart">☕</span> café, me haría muy feliz.'],
-        ctaHint: 'Haz clic en el botón de abajo para visitar la página de soporte',
-        btnText: 'Support My Work',
+        thank: [
+          'Gracias por usar FontFixer. Construí esta herramienta porque frecuentemente encontraba sitios web con fuentes borrosas, pequeñas o feas.',
+          'Si también te ayuda a leer con más comodidad, esa ya es la mejor recompensa.',
+          'Si quieres invitarme a un <span class="heart">☕</span> café, me haría muy feliz — me motivaría a seguir mejorando FontFixer.'
+        ],
+        disclaimer: 'El patrocinio en Ko-fi es puramente voluntario y no afecta ninguna funcionalidad. El patrocinio no tiene vinculación con las funciones de la extensión — es únicamente apoyo iniciado por el usuario.',
+        ctaHint: 'Haz clic en el botón de abajo para visitar la página de soporte de Ko-fi',
+        btnText: 'Buy Me a Coffee',
         privacyPolicy: 'Política de Privacidad'
       },
       fr: {
-        tagline: 'Optimiseur de polices web · Commutation en un clic · Aperçu en temps réel · Entièrement local',
+        tagline: 'Optimisez les polices web · Améliorez le confort de lecture · Commutation en un clic · Entièrement local',
         featuresTitle: '✨ Fonctionnalités',
-        features: ['Lit toutes les polices installées sur votre appareil', 'Taille de police 80%-160% avec aperçu en temps réel', 'Couleur de texte et de lien personnalisées', 'Paramètres de police par site sauvegardés indépendamment', 'Exclure des sites spécifiques en un clic', 'Traitement entièrement local, aucune requête réseau'],
+        features: [
+          'Lit toutes les polices installées sur votre appareil, avec annotations CJK',
+          '3 polices intégrées : Noto Sans, Source Han Sans, Arial',
+          'Taille de police 80%~160% avec aperçu en temps réel',
+          'Couleur de texte et de lien personnalisées',
+          'Paramètres par site sauvegardés indépendamment, plus mode global',
+          'Manifest V3 · Traitement entièrement local, aucune requête réseau'
+        ],
         thankTitle: '💌 Un petit mot pour vous',
-        thank: ['Merci d\'utiliser FontFixer. J\'ai construit cet outil parce que je rencontrais souvent des sites avec des polices floues, petites ou laides.', 'S\'il vous aide aussi, c\'est déjà la plus belle récompense.', 'Bien sûr, si vous souhaitez m\'offrir un <span class="heart">☕</span> café, cela me ferait très plaisir.'],
-        ctaHint: 'Cliquez sur le bouton ci-dessous pour accéder à la page de soutien',
-        btnText: 'Support My Work',
+        thank: [
+          'Merci d\'utiliser FontFixer. J\'ai construit cet outil parce que je rencontrais souvent des sites avec des polices floues, petites ou laides.',
+          'S\'il vous aide aussi à lire plus confortablement, c\'est déjà la plus belle récompense.',
+          'Si vous souhaitez m\'offrir un <span class="heart">☕</span> café, cela me ferait très plaisir — cela me motiverait à améliorer FontFixer encore davantage.'
+        ],
+        disclaimer: 'Le parrainage sur Ko-fi est purement volontaire et n\'affecte aucune fonctionnalité. Le parrainage n\'est lié à aucune fonctionnalité de l\'extension — il s\'agit uniquement d\'un soutien initié par l\'utilisateur.',
+        ctaHint: 'Cliquez sur le bouton ci-dessous pour accéder à la page de soutien Ko-fi',
+        btnText: 'Buy Me a Coffee',
         privacyPolicy: 'Politique de Confidentialité'
       }
     };
 
+    // ============================================================
+    //  Language detection
+    // ============================================================
     function detectLang() {
-      const raw = (navigator.language || 'en');
-      const map = { 'zh-TW': 'zh', 'zh-Hans': 'zh', 'zh-Hant': 'zh' };
+      const raw = (navigator.language || 'en').toLowerCase();
+      const map = { 'zh-tw': 'zh', 'zh-hans': 'zh', 'zh-hant': 'zh', 'zh-cn': 'zh' };
       const mapped = map[raw] || raw;
-      const base = mapped.split('-')[0].toLowerCase();
-      if (I18N[mapped]) return mapped;
-      return I18N[base] ? base : 'en';
+      const base = mapped.split('-')[0];
+      return I18N[mapped] ? mapped : (I18N[base] ? base : 'en');
     }
 
+    // ============================================================
+    //  Apply translations to DOM
+    // ============================================================
     function applyLang(lang) {
       const t = I18N[lang];
+
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key]) {
-          if (key === 'thank') return;
-          el.textContent = t[key];
-        }
+        if (t[key]) el.textContent = t[key];
       });
-      const list = document.getElementById('featureList');
-      list.innerHTML = t.features.map(f => `<li>${f}</li>`).join('');
-      const thankDiv = document.getElementById('thankText');
-      thankDiv.innerHTML = t.thank.map(p => `<p>${p}</p>`).join('');
+
+      document.getElementById('featureList').innerHTML = t.features.map(f => `<li>${f}</li>`).join('');
+      document.getElementById('thankText').innerHTML = t.thank.map(p => `<p>${p}</p>`).join('');
       document.documentElement.lang = lang;
     }
 
+    // ============================================================
+    //  Init
+    // ============================================================
     applyLang(detectLang());
   </script>
 </body>
