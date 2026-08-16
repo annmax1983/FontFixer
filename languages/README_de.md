@@ -3,11 +3,13 @@
 
 Eine leichtgewichtige Browser-Erweiterung zur Optimierung von Webseiten-Schriften. Schriftart, Größe und Textfarbe mit einem Klick ändern.
 
-> Chromium-basiert · Manifest V3 · Minimale Berechtigungen · Vollständig lokal
+> Chromium-basiert · Manifest V3 · Minimale Berechtigungen · Kein Tracking
 
 ---
 
 ## Funktionen
+
+### 🆓 Kostenlos
 
 | Funktion | Beschreibung |
 |----------|-------------|
@@ -15,7 +17,15 @@ Eine leichtgewichtige Browser-Erweiterung zur Optimierung von Webseiten-Schrifte
 | 📏 **Schriftgröße** | 80% bis 160% per Schieberegler |
 | 🎨 **Textfarbe** | Per Farbwähler anpassbar |
 | 🔗 **Linkfarbe** | Separat konfigurierbar |
-| 🔄 **Geltungsbereich** | Nur aktuelle Website oder global |
+| 🔄 **Auto-Anwenden** | Gespeicherte Einstellungen bei jedem Besuch automatisch erneut anwenden |
+| 💾 **Auto-Speicherung** | Bis zu 5 Website-Konfigurationen |
+
+### ⭐ Pro (Lizenz erforderlich)
+
+| Funktion | Beschreibung |
+|----------|-------------|
+| ♾️ **Unbegrenzte Konfigurationen** | Einstellungen für beliebig viele Websites speichern |
+| 📦 **Import / Export** | Konfigurationen exportieren und auf anderen Geräten importieren |
 
 ---
 
@@ -30,7 +40,9 @@ Eine leichtgewichtige Browser-Erweiterung zur Optimierung von Webseiten-Schrifte
 
 ## Datenschutz
 
-- Kein Tracking, keine Analytik, keine externen Verbindungen
+- Kein Tracking, keine Analytik. Die einzige Netzwerkanfrage ist die Aktivierung/Validierung bei Verwendung eines Pro-Lizenzschlüssels.
+- `<all_urls>` — Erneutes Anwenden gespeicherter Schrifteinstellungen auf von Ihnen konfigurierten Websites. Liest oder überträgt niemals Seiteninhalte.
+- **Lokaler Schriftzugriff** — Keine Manifest-Berechtigung; wird zur Laufzeit über eine Browser-Abfrage gewährt. Liest nur Anzeigenamen, niemals Schriftdateien.
 
 ---
 

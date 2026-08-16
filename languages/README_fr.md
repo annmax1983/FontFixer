@@ -3,11 +3,13 @@
 
 Extension légère pour optimiser les polices web. Changez la famille, la taille et la couleur du texte en un clic.
 
-> Basé sur Chromium · Manifest V3 · Permissions minimales · 100% local
+> Basé sur Chromium · Manifest V3 · Permissions minimales · Aucun suivi
 
 ---
 
 ## Fonctionnalités
+
+### 🆓 Gratuit
 
 | Fonctionnalité | Description |
 |----------------|-------------|
@@ -15,7 +17,15 @@ Extension légère pour optimiser les polices web. Changez la famille, la taille
 | 📏 **Taille** | 80% à 160% avec curseur |
 | 🎨 **Couleur du texte** | Personnalisable |
 | 🔗 **Couleur des liens** | Configuration séparée |
-| 🔄 **Portée** | Site actuel ou global |
+| 🔄 **Application automatique** | Réapplique automatiquement les paramètres enregistrés à chaque visite |
+| 💾 **Sauvegarde auto** | Jusqu'à 5 configurations de sites |
+
+### ⭐ Pro (Licence requise)
+
+| Fonctionnalité | Description |
+|----------------|-------------|
+| ♾️ **Configurations illimitées** | Sauvegardez des réglages pour un nombre illimité de sites |
+| 📦 **Importer / Exporter** | Exportez vos configurations et importez-les sur d'autres appareils |
 
 ---
 
@@ -30,7 +40,9 @@ Extension légère pour optimiser les polices web. Changez la famille, la taille
 
 ## Confidentialité
 
-- Aucun suivi, aucune analytique, aucune connexion externe
+- Aucun suivi, aucune analytique. La seule requête réseau est l'activation/validation lors de l'utilisation d'une clé de licence Pro.
+- `<all_urls>` — Réapplique les styles de police enregistrés sur les sites que vous configurez. Ne lit ni ne télécharge jamais le contenu des pages.
+- **Accès aux polices locales** — Aucune permission de manifeste ; accordé à l'exécution via une invite du navigateur. Ne lit que les noms d'affichage, jamais les fichiers de police.
 
 ---
 

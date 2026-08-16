@@ -3,11 +3,13 @@
 
 Extensión ligera para optimizar fuentes web. Cambia familia, tamaño y color de texto con un clic.
 
-> Basado en Chromium · Manifest V3 · Permisos mínimos · 100% local
+> Basado en Chromium · Manifest V3 · Permisos mínimos · Sin seguimiento
 
 ---
 
 ## Características
+
+### 🆓 Gratis
 
 | Característica | Descripción |
 |----------------|-------------|
@@ -15,7 +17,15 @@ Extensión ligera para optimizar fuentes web. Cambia familia, tamaño y color de
 | 📏 **Tamaño** | 80% a 160% con deslizador |
 | 🎨 **Color de texto** | Personalizable con selector |
 | 🔗 **Color de enlaces** | Configuración separada |
-| 🔄 **Alcance** | Sitio actual o global |
+| 🔄 **Aplicación automática** | Reaplica automáticamente los ajustes guardados en cada visita |
+| 💾 **Guardado automático** | Hasta 5 configuraciones de sitios |
+
+### ⭐ Pro (Requiere licencia)
+
+| Característica | Descripción |
+|----------------|-------------|
+| ♾️ **Configuraciones ilimitadas** | Guarda ajustes para sitios ilimitados |
+| 📦 **Importar / Exportar** | Exporta configuraciones e impórtalas en otros dispositivos |
 
 ---
 
@@ -30,7 +40,9 @@ Extensión ligera para optimizar fuentes web. Cambia familia, tamaño y color de
 
 ## Privacidad
 
-- Sin rastreo, sin analíticas, sin conexiones externas
+- Sin rastreo, sin analíticas. La única solicitud de red es la activación/validación al usar una clave de licencia Pro.
+- `<all_urls>` — Reaplica los estilos de fuente guardados en los sitios que configures. Nunca lee ni sube contenido de páginas.
+- **Acceso a fuentes locales** — Sin permiso de manifiesto; se concede en tiempo de ejecución mediante un aviso del navegador. Solo lee nombres para mostrar, nunca archivos de fuente.
 
 ---
 
