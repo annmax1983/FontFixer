@@ -42,6 +42,7 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 | Feature | Description |
 |---------|-------------|
 | ♾️ **Unlimited Configs** | Save font settings for unlimited websites |
+| 📤 **Import / Export** | Backup and restore your font configurations across devices |
 
 ---
 

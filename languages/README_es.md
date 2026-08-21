@@ -46,6 +46,13 @@ Extensión ligera para optimizar fuentes web. Cambia familia, tamaño y color de
 
 ---
 
+---
+
+## Aviso de código fuente
+
+> ⚠️ **Este repositorio no publica el código fuente.** Contiene únicamente documentación de uso, notas de versión y recursos de soporte. La extensión se distribuye exclusivamente a través de Chrome Web Store. No se proporcionan paquetes de instalación sin conexión ni código fuente para usuarios finales.
+
+
 ## Licencia
 
 Copyright © 2026 FontFixer. Todos los derechos reservados.
