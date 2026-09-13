@@ -82,7 +82,7 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 1. Click the FontFixer icon in your toolbar
 2. Select a font from the dropdown — 3 built-in fonts are always available; click **🔄** to load fonts installed on your device
 3. Adjust font size with the slider (80%–160%)
-4. Optionally change text and link colors
+4. Optionally tick **Text Color** / **Link Color** to override colors (off = never touch page colors)
 5. Click **Apply & Save** — settings apply instantly and are stored for this site
 
 ### Auto Apply
