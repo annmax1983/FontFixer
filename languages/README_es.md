@@ -29,7 +29,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 | Funcionalidad | Descripción |
 |---------|-------------|
 | 🔤 **Selección de fuente** | Elige entre 3 fuentes integradas (Noto Sans, Source Han Sans, Arial) o cualquier fuente instalada en tu dispositivo |
-| 📏 **Escala de tamaño de fuente** | Ajusta del 80% al 160% con un control deslizante |
+| 📏 **Escala de tamaño de fuente** | Ajusta del 50% al 500% con un control deslizante |
 | 🎨 **Color del texto** | Color de texto personalizado con selector de color |
 | 🔗 **Color de los enlaces** | Color de enlaces separado para mejor legibilidad |
 | 🔄 **Aplicación automática** | Vuelve a aplicar la configuración automáticamente en cada visita a un sitio configurado |
@@ -81,7 +81,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 
 1. Haz clic en el icono de FontFixer en tu barra de herramientas
 2. Selecciona una fuente del desplegable — 3 fuentes integradas están siempre disponibles; haz clic en **🔄** para cargar las fuentes instaladas en tu dispositivo
-3. Ajusta el tamaño de fuente con el control deslizante (80%–160%)
+3. Ajusta el tamaño de fuente con el control deslizante (50%–500%)
 4. Opcionalmente marca **Color del texto** / **Color de enlaces** para sobrescribir los colores (desactivado = no tocar los colores de la página)
 5. Haz clic en **Aplicar y guardar** — la configuración se aplica al instante y se almacena para este sitio
 
@@ -122,7 +122,7 @@ Todo el procesamiento de estilos ocurre localmente en tu navegador. La única so
 
 ## Aviso de derechos de autor de fuentes
 
-Tres tipografías integradas (Noto Sans, Source Han Sans, Arial) se distribuyen bajo la SIL Open Font License, que permite el uso personal y comercial sin autorización adicional.
+FontFixer no incluye archivos de fuente. Noto Sans y Source Han Sans son tipografías de código abierto disponibles bajo la SIL Open Font License; Arial es una tipografía comercial de Monotype y solo se ofrece como opción cuando ya está instalada en tu sistema. Todos los derechos de las fuentes instaladas pertenecen a sus respectivos titulares.
 
 La extensión solo lee la lista de nombres de las fuentes instaladas en tu dispositivo local mediante la API estándar del navegador, y no extraerá, copiará ni subirá ningún archivo de fuente local. Todos los derechos de las fuentes del sistema pertenecen a sus respectivos titulares de derechos de autor.
 

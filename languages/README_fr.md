@@ -29,7 +29,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 | Fonctionnalité | Description |
 |---------|-------------|
 | 🔤 **Sélection de police** | Choisissez parmi 3 polices intégrées (Noto Sans, Source Han Sans, Arial) ou toute police installée sur votre appareil |
-| 📏 **Taille de police** | Ajustement de 80 % à 160 % avec un curseur |
+| 📏 **Taille de police** | Ajustement de 50 % à 500 % avec un curseur |
 | 🎨 **Couleur du texte** | Couleur de texte personnalisable avec le sélecteur de couleur |
 | 🔗 **Couleur des liens** | Couleur des liens séparée pour une meilleure lisibilité |
 | 🔄 **Application automatique** | Réapplique les réglages automatiquement à chaque visite sur un site configuré |
@@ -81,7 +81,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 
 1. Cliquez sur l'icône FontFixer dans votre barre d'outils
 2. Sélectionnez une police dans le menu déroulant — 3 polices intégrées sont toujours disponibles ; cliquez sur **🔄** pour charger les polices installées sur votre appareil
-3. Ajustez la taille de police avec le curseur (80 %–160 %)
+3. Ajustez la taille de police avec le curseur (50 %–500 %)
 4. Cochez optionnellement **Couleur du texte** / **Couleur des liens** pour remplacer les couleurs (désactivé = ne jamais toucher aux couleurs de la page)
 5. Cliquez sur **Appliquer et enregistrer** — les paramètres s'appliquent instantanément et sont stockés pour ce site
 
@@ -122,7 +122,7 @@ Tout le traitement des styles se fait en local dans votre navigateur. La seule r
 
 ## Avis relatif aux droits d'auteur des polices
 
-Les trois typographies intégrées (Noto Sans, Source Han Sans, Arial) sont distribuées sous la licence SIL Open Font License, qui autorise l'usage personnel et commercial sans autorisation supplémentaire.
+FontFixer n'intègre aucun fichier de police. Noto Sans et Source Han Sans sont des polices open source disponibles sous la SIL Open Font License ; Arial est une police commerciale appartenant à Monotype et n'est proposée comme choix que si elle est déjà installée sur votre système. Tous les droits sur les polices installées appartiennent à leurs détenteurs respectifs.
 
 L'extension lit uniquement la liste des noms des polices installées sur votre appareil via l'API standard du navigateur, et n'extraiera, ne copiera ni n'enverra aucun fichier de police local. Tous les droits des polices système appartiennent à leurs titulaires respectifs.
 

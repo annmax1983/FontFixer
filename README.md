@@ -29,7 +29,7 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 | Feature | Description |
 |---------|-------------|
 | 🔤 **Font Selection** | Choose from 3 built-in fonts (Noto Sans, Source Han Sans, Arial) or any font installed on your device |
-| 📏 **Font Size Scaling** | Adjust from 80% to 160% with a slider |
+| 📏 **Font Size Scaling** | Adjust from 50% to 500% with a slider |
 | 🎨 **Text Color** | Custom text color with color picker |
 | 🔗 **Link Color** | Separate link color for better readability |
 | 🔄 **Auto Apply** | Re-apply settings automatically on every visit to a configured site |
@@ -81,7 +81,7 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 
 1. Click the FontFixer icon in your toolbar
 2. Select a font from the dropdown — 3 built-in fonts are always available; click **🔄** to load fonts installed on your device
-3. Adjust font size with the slider (80%–160%)
+3. Adjust font size with the slider (50%–500%)
 4. Optionally tick **Text Color** / **Link Color** to override colors (off = never touch page colors)
 5. Click **Apply & Save** — settings apply instantly and are stored for this site
 
@@ -122,7 +122,7 @@ All style processing happens locally in your browser. The only network request i
 
 ## Font Copyright Notice
 
-Three built-in typefaces (Noto Sans, Source Han Sans, Arial) are distributed under SIL Open Font License, which allows personal and commercial use without extra authorization.
+FontFixer does not bundle any font files. Noto Sans and Source Han Sans are open-source typefaces available under the SIL Open Font License; Arial is a commercial typeface owned by Monotype and is offered only as a font-family choice when it is already installed on your system. All rights in installed fonts remain with their respective owners.
 
 The extension only reads the name list of fonts installed on your local device via browser standard API, and will not extract, copy or upload any local font files. All rights of system fonts belong to their respective copyright holders.
 

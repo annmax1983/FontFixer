@@ -29,7 +29,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 | Funktion | Beschreibung |
 |----------|--------------|
 | 🔤 **Schriftauswahl** | Wähle aus 3 eingebauten Schriften (Noto Sans, Source Han Sans, Arial) oder jeder auf deinem Gerät installierten Schrift |
-| 📏 **Schriftgröße skalieren** | Von 80% bis 160% per Schieberegler einstellen |
+| 📏 **Schriftgröße skalieren** | Von 50% bis 500% per Schieberegler einstellen |
 | 🎨 **Textfarbe** | Benutzerdefinierte Textfarbe mit Farbwähler |
 | 🔗 **Linkfarbe** | Separate Linkfarbe für bessere Lesbarkeit |
 | 🔄 **Auto-Anwenden** | Einstellungen werden bei jedem Besuch einer konfigurierten Seite automatisch wieder angewendet |
@@ -81,7 +81,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 
 1. Klicke auf das FontFixer-Symbol in deiner Toolbar
 2. Wähle eine Schrift aus dem Dropdown — 3 eingebaute Schriften sind immer verfügbar; klicke auf **🔄**, um auf deinem Gerät installierte Schriften zu laden
-3. Schriftgröße mit dem Schieberegler anpassen (80%–160%)
+3. Schriftgröße mit dem Schieberegler anpassen (50%–500%)
 4. Optional **Textfarbe** / **Linkfarbe** ankreuzen, um Farben zu überschreiben (aus = Seitenfarben nie anfassen)
 5. Klicke auf **Anwenden & Speichern** — Einstellungen werden sofort angewommen und für diese Seite gespeichert
 
@@ -122,7 +122,7 @@ Alle Style-Verarbeitung passiert lokal in deinem Browser. Die einzige Netzwerkan
 
 ## Schrift-Urheberrechtshinweis
 
-Drei eingebaute Schriften (Noto Sans, Source Han Sans, Arial) werden unter der SIL Open Font License vertrieben, die persönliche und kommerzielle Nutzung ohne zusätzliche Genehmigung erlaubt.
+FontFixer bündelt keine Schriftdateien. Noto Sans und Source Han Sans sind Open-Source-Schriften unter der SIL Open Font License; Arial ist eine kommerzielle Schrift von Monotype und wird nur als Schriftauswahl angeboten, wenn sie bereits auf deinem System installiert ist. Alle Rechte an installierten Schriften liegen bei ihren jeweiligen Inhabern.
 
 Die Erweiterung liest nur die Namensliste der auf deinem lokalen Gerät installierten Schriften über die Browser-Standard-API und wird keine lokalen Schriftdateien extrahieren, kopieren oder hochladen. Alle Rechte der Systemschriften gehören deren jeweiligen Rechteinhabern.
 

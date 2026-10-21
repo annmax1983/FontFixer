@@ -1,185 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FontFixer — Privacy Policy</title>
+<meta name="description" content="FontFixer privacy policy: what is stored on your device, when the extension uses the network, and how to delete your data.">
+<link rel="icon" href="icons/icon128.png">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #1e293b;
-    background: #f8fafc;
-    line-height: 1.7;
-  }
-  .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-  h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: #667eea; }
-  .updated { font-size: 13px; color: #94a3b8; margin-bottom: 32px; }
-  .highlight {
-    background: #ecfdf5;
-    border: 1px solid #a7f3d0;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin: 20px 0;
-  }
-  .highlight strong { color: #065f46; }
-  h2 { font-size: 18px; font-weight: 600; margin: 28px 0 12px; color: #334155; }
-  p { margin-bottom: 12px; font-size: 15px; color: #475569; }
-  ul { margin: 0 0 12px 20px; }
-  li { margin-bottom: 6px; font-size: 15px; color: #475569; }
-  code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-  .footer-link {
-    display: inline-block; margin-bottom: 24px;
-    color: #667eea; text-decoration: none; font-size: 14px;
-  }
-  .footer-link:hover { text-decoration: underline; }
-  footer {
-    margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0;
-    text-align: center; font-size: 13px; color: #94a3b8;
-  }
-  footer a { color: #667eea; text-decoration: none; }
+:root{
+  --accent:#4f46e5;
+  --accent-2:#8b5cf6;
+  --bg:#f5f8fc;
+  --surface:#ffffff;
+  --ink:#20304a;
+  --body:#4b5870;
+  --muted:#64718a;
+  --line:#e2e8f2;
+  --tint:#eef3fb;
+  --tint:color-mix(in srgb, var(--accent) 8%, #ffffff);
+  --tint-strong:#e5edfa;
+  --tint-strong:color-mix(in srgb, var(--accent) 14%, #ffffff);
+  --shadow:0 18px 45px rgba(32,48,74,.10);
+  --shadow-soft:0 8px 24px rgba(32,48,74,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  margin:0;
+  color:var(--body);
+  background:radial-gradient(900px 420px at 100% -8%, color-mix(in srgb, var(--accent-2) 12%, #ffffff) 0%, rgba(255,255,255,0) 70%), var(--bg);
+  font-family:"Segoe UI Variable Text","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+button,select{font:inherit}
+[hidden]{display:none !important}
+::selection{background:color-mix(in srgb, var(--accent) 22%, #ffffff);color:var(--ink)}
+:focus-visible{outline:2px solid color-mix(in srgb, var(--accent) 55%, #ffffff);outline-offset:3px}
+.wrap{width:min(1120px, calc(100% - 40px));margin:0 auto}
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;align-items:center;gap:18px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--ink);font-size:16px;font-weight:750;letter-spacing:-.015em;white-space:nowrap}
+.brand:hover{text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:9px;background:#fff;border:1px solid var(--line)}
+.nav-links{display:flex;align-items:center;gap:20px;margin-left:auto;font-size:13.5px;font-weight:650}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--accent);text-decoration:none}
+.top-actions{display:flex;align-items:center;gap:9px;margin-left:auto}
+.nav-links + .top-actions{margin-left:0}
+.icon-btn{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.icon-btn:hover{color:var(--accent);border-color:color-mix(in srgb, var(--accent) 26%, var(--line));text-decoration:none}
+.lang{
+  appearance:none;-webkit-appearance:none;
+  border:1px solid var(--line);
+  background-color:#fff;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364718a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:12px;
+  color:var(--ink);
+  border-radius:10px;
+  padding:9px 32px 9px 11px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  max-width:150px;
+}
+.lang:hover{border-color:color-mix(in srgb, var(--accent) 26%, var(--line))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 20px;border-radius:12px;border:1px solid transparent;font-weight:700;font-size:14.5px;line-height:1.2;transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 26px color-mix(in srgb, var(--accent) 26%, transparent)}
+.btn-primary:hover{background:color-mix(in srgb, var(--accent) 90%, var(--ink));box-shadow:0 15px 30px color-mix(in srgb, var(--accent) 30%, transparent)}
+.btn-secondary{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-secondary:hover{border-color:color-mix(in srgb, var(--accent) 28%, var(--line))}
+.btn-quiet{background:transparent;color:var(--muted);padding:0 8px}
+.btn-quiet:hover{color:var(--accent)}
+.site-footer{margin-top:48px;border-top:1px solid var(--line);background:rgba(255,255,255,.8);padding:32px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between}
+.footer-brand{display:flex;align-items:center;gap:11px;color:var(--ink);font-size:14px;font-weight:700}
+.footer-brand img{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:#fff}
+.footer-brand .copy{display:block;color:var(--muted);font-size:12px;font-weight:500;line-height:1.4;margin-top:1px}
+.footer-links{display:flex;flex-wrap:wrap;gap:9px 18px;align-items:center;font-size:13px;font-weight:600}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--accent);text-decoration:none}
+@media (max-width:900px){
+  .nav-links{display:none}
+  .topbar-inner{height:62px}
+  .wrap{width:calc(100% - 32px)}
+}
+@media (max-width:560px){
+  .brand span{display:none}
+  .lang{max-width:124px}
+  .site-footer{padding:26px 0}
+  .footer-inner{align-items:flex-start;flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none !important;animation:none !important}
+}
+
+.policy-hero{padding:42px 0 8px}
+.policy-hero-card{position:relative;overflow:hidden;background:linear-gradient(135deg,#ffffff 0%, color-mix(in srgb, var(--accent) 7%, #ffffff) 58%, color-mix(in srgb, var(--accent-2) 16%, #ffffff) 100%);border:1px solid var(--line);border-radius:26px;padding:42px 46px 36px;box-shadow:var(--shadow)}
+.policy-hero-card::after{content:"";position:absolute;width:360px;height:360px;right:-110px;top:-160px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 22%, #ffffff);box-shadow:0 0 0 48px color-mix(in srgb, var(--accent) 5%, transparent);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid color-mix(in srgb, var(--accent) 22%, var(--line));color:var(--accent);font-size:11.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.policy-hero h1{position:relative;z-index:1;margin:16px 0 0;color:var(--ink);font-size:clamp(34px,4.4vw,50px);line-height:1.06;letter-spacing:-.035em;font-weight:800}
+.policy-hero h1 .h1-sub{color:var(--accent);font-weight:780}
+.summary{position:relative;z-index:1;max-width:860px;margin:16px 0 20px;color:var(--body);font-size:15.5px;line-height:1.75}
+.summary strong{color:var(--ink);font-weight:700}
+.chips{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.8);color:var(--ink);font-size:12.5px;font-weight:650}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-2)}
+.updated{position:relative;z-index:1;display:flex;align-items:center;gap:7px;margin:18px 0 0;color:var(--muted);font-size:12.5px;font-weight:550}
+.updated svg{color:var(--accent)}
+.policy-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;align-items:start;padding:32px 0 38px}
+.toc{position:sticky;top:92px;max-height:calc(100vh - 120px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow-soft)}
+.toc-title{margin:2px 0 10px;color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+#p-toc{display:grid;gap:2px}
+#p-toc a{display:grid;grid-template-columns:24px minmax(0,1fr);gap:7px;align-items:baseline;padding:7px 9px;border-radius:9px;border:1px solid transparent;color:var(--muted);font-size:12.8px;line-height:1.38}
+#p-toc a span{color:color-mix(in srgb, var(--accent) 58%, var(--muted));font-size:10px;font-weight:800;letter-spacing:.06em}
+#p-toc a:hover{background:var(--tint);color:var(--ink);text-decoration:none}
+#p-toc a.active{background:var(--tint);border-color:color-mix(in srgb, var(--accent) 18%, var(--line));color:var(--ink)}
+#p-toc a.active span{color:var(--accent)}
+.policy-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--shadow-soft)}
+.policy-card + .policy-card{margin-top:15px}
+.policy-card h2{display:flex;align-items:baseline;gap:11px;margin:0 0 16px;color:var(--ink);font-size:21px;line-height:1.3;letter-spacing:-.015em;font-weight:760}
+.policy-num{flex:none;padding:3px 7px;border-radius:7px;background:var(--tint);color:var(--accent);font-size:10.5px;font-weight:800;letter-spacing:.06em}
+.policy-body{color:var(--body);font-size:15px;line-height:1.75;overflow-wrap:anywhere}
+.policy-body p{margin:0 0 14px}
+.policy-body p:last-child{margin-bottom:0}
+.policy-body strong{color:var(--ink);font-weight:700}
+.policy-body em{color:var(--body)}
+.policy-body a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.policy-body a:hover{color:color-mix(in srgb, var(--accent) 80%, var(--ink))}
+.policy-body code{display:inline;padding:1px 6px;border:1px solid var(--line);border-radius:6px;background:#f3f6fb;color:var(--ink);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em}
+.policy-body ul{display:grid;gap:8px;margin:0 0 15px;padding:0;list-style:none}
+.policy-body ul:last-child{margin-bottom:0}
+.policy-body li{position:relative;padding-left:21px}
+.policy-body li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--accent-2)}
+.policy-body h3{margin:21px 0 8px;color:var(--ink);font-size:15.5px;line-height:1.4;font-weight:750}
+.policy-body h3:first-child{margin-top:0}
+.policy-body .note{margin:15px 0 0;padding:13px 15px;border-left:3px solid var(--accent);border-radius:10px;background:var(--tint);color:var(--body);font-size:13.5px;line-height:1.65}
+.table-wrap{margin:15px 0;overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.policy-body table{width:100%;min-width:480px;border-collapse:collapse;font-size:13.5px;line-height:1.55}
+.policy-body th{padding:10px 13px;border-bottom:1px solid var(--line);background:#f4f7fc;color:var(--ink);text-align:left;font-weight:700}
+.policy-body td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+.policy-body th:first-child,.policy-body td:first-child{min-width:150px}
+.policy-body tr:last-child td{border-bottom:none}
+.policy-body table code{white-space:nowrap}
+@media (max-width:900px){
+  .policy-hero{padding:26px 0 4px}
+  .policy-hero-card{padding:30px 24px 28px;border-radius:22px}
+  .policy-layout{grid-template-columns:1fr;gap:16px;padding:22px 0 30px}
+  .toc{position:static;max-height:none;padding:14px}
+  #p-toc{grid-template-columns:1fr 1fr}
+  .policy-card{padding:23px 20px}
+  .policy-card h2{font-size:19px}
+}
+@media (max-width:600px){
+  #p-toc{grid-template-columns:1fr}
+  .policy-card{padding:21px 17px}
+  .policy-body{font-size:14.5px}
+}
 </style>
 </head>
 <body>
-<div class="container">
-  <a class="footer-link" href="https://annmax1983.github.io/FontFixer/">← FontFixer</a>
-  <h1 id="title"></h1>
-  <p class="updated" id="updated"></p>
-
-  <div class="highlight" id="highlight"></div>
-
-  <h2 id="h1"></h2>
-  <p id="p1"></p>
-  <ul id="l1"></ul>
-
-  <h2 id="h2"></h2>
-  <p id="p2"></p>
-  <ul id="l2"></ul>
-  <p id="p2note"></p>
-
-  <h2 id="h3"></h2>
-  <p id="p3"></p>
-
-  <h2 id="h4"></h2>
-  <p id="p4"></p>
-
-  <h2 id="h5"></h2>
-  <p id="p5"></p>
-
-  <h2 id="h6"></h2>
-  <p id="p6"></p>
-
-  <footer>
-    <p>&copy; 2026 FontFixer. <span id="rights"></span></p>
-    <p><a href="https://github.com/annmax1983/FontFixer" id="gh"></a></p>
-  </footer>
-</div>
-
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html"><img src="icons/icon128.png" alt="" width="32" height="32"><span>FontFixer</span></a>
+    <div class="top-actions">
+      <a class="icon-btn" href="https://github.com/annmax1983/FontFixer" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.4 9.4 0 0 1 12 5.96c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a>
+      <select class="lang" id="p-lang" aria-label="Language"><option value="en">English</option><option value="zh">简体中文</option><option value="ja">日本語</option><option value="de">Deutsch</option><option value="es">Español</option><option value="fr">Français</option></select>
+      <a class="icon-btn" href="index.html" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10h12V10"/></svg></a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="policy-hero">
+    <div class="wrap">
+      <div class="policy-hero-card">
+        <span class="eyebrow" id="p-eyebrow">Privacy Policy</span>
+        <h1><span id="p-h1">FontFixer</span> <span class="h1-sub" id="p-h1-sub">Privacy Policy</span></h1>
+        <p class="summary" id="p-summary"><strong>Short version:</strong> FontFixer never reads, stores, or uploads webpage content. All font configuration stays in your browser. Free use is fully offline — the only network request is optional Pro license activation, which sends your license key and basic browser info to the license server. Our license server records the IP address of these requests solely for rate limiting and abuse prevention — never for profiling, advertising, or sharing with third parties.</p>
+        <div class="chips" id="p-chips"><span class="chip">Runs on your device</span><span class="chip">No analytics</span><span class="chip">No account</span><span class="chip">Licence optional</span></div>
+        <p class="updated"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="p-updated">Last updated: October 2026</span></p>
+      </div>
+    </div>
+  </section>
+  <div class="wrap policy-layout">
+    <aside class="toc">
+      <p class="toc-title" id="p-toc-title">On this page</p>
+      <nav id="p-toc" aria-label="On this page">
+<a href="#section-1"><span>01</span>Data Collection</a>
+<a href="#section-2"><span>02</span>Permissions</a>
+<a href="#section-3"><span>03</span>Data Storage</a>
+<a href="#section-4"><span>04</span>License Activation &amp; Network</a>
+<a href="#section-5"><span>05</span>Open Source Fonts</a>
+<a href="#section-6"><span>06</span>Data retention &amp; deletion</a>
+<a href="#section-7"><span>07</span>Changes to this policy</a>
+<a href="#section-8"><span>08</span>Contact</a>
+      </nav>
+    </aside>
+    <div id="p-sections">
+<article class="policy-card" id="section-1"><h2><span class="policy-num">01</span>Data Collection</h2><div class="policy-body"><p>FontFixer does <strong>not</strong> collect or store any of the following:</p><ul><li>Browsing history or URLs visited</li><li>Page text, images, or content</li><li>Cookies or tracking identifiers</li><li>Usage analytics or telemetry</li></ul></div></article>
+<article class="policy-card" id="section-2"><h2><span class="policy-num">02</span>Permissions</h2><div class="policy-body"><p>FontFixer uses these permissions only to adjust page fonts:</p><ul><li><strong>storage</strong> — Saves your font preferences locally. No webpage content is stored.</li><li><strong>scripting</strong> — Injects CSS to change page fonts. Does not read page text or data.</li><li><strong>activeTab</strong> — Only accesses the current tab when you interact with the extension.</li><li><strong>Host access</strong> — Lets saved styles be re-applied automatically on sites you have configured (Auto Apply). It never reads or uploads page content.</li></ul><div class="note">Host access covers all sites so saved styles can be re-applied on any site you configure — it is never used to read or upload page content.</div></div></article>
+<article class="policy-card" id="section-3"><h2><span class="policy-num">03</span>Data Storage</h2><div class="policy-body"><p>All settings are stored locally in your browser using <code>chrome.storage.local</code>. Data is deleted when you uninstall the extension.</p></div></article>
+<article class="policy-card" id="section-4"><h2><span class="policy-num">04</span>License Activation &amp; Network</h2><div class="policy-body"><p>Free use works fully offline. If you activate a Pro license, FontFixer sends your license key, a random install identifier, and basic browser info (browser version, language, timezone) to our license server (api.annmax1983.com) to validate the license. No webpage content is ever sent.</p></div></article>
+<article class="policy-card" id="section-5"><h2><span class="policy-num">05</span>Open Source Fonts</h2><div class="policy-body"><p>Built-in fonts (Noto Sans, Source Han Sans, Arial) are open-source or system fonts with commercial-use licenses.</p></div></article>
+<article class="policy-card" id="section-6"><h2><span class="policy-num">06</span>Data retention &amp; deletion</h2><div class="policy-body"><p>Your settings and content stay in your browser until you delete them in the extension or uninstall it. Uninstalling removes the extension's local data. Nothing is retained on our servers, because your content is never sent to them.</p></div></article>
+<article class="policy-card" id="section-7"><h2><span class="policy-num">07</span>Changes to this policy</h2><div class="policy-body"><p>If this policy changes, the revised version will be published on this page with a new date. Material changes will be noted in the extension's release notes.</p></div></article>
+<article class="policy-card" id="section-8"><h2><span class="policy-num">08</span>Contact</h2><div class="policy-body"><p>Questions about this policy? Email <a href="mailto:support@annmax1983.com">support@annmax1983.com</a> or open an issue on <a href="https://github.com/annmax1983/FontFixer" target="_blank" rel="noopener">GitHub</a>.</p></div></article>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="icons/icon128.png" alt="" width="30" height="30">
+      <div>FontFixer<span class="copy">© 2026 FontFixer</span></div>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html" id="p-footer-home">Home</a>
+      <a href="privacy-policy.html" id="p-footer-privacy">Privacy Policy</a>
+      <a href="https://github.com/annmax1983/FontFixer" target="_blank" rel="noopener" id="p-footer-github">GitHub</a>
+      <a href="https://annmax1983.com/extensions/fontfixer" target="_blank" rel="noopener" id="p-footer-site">Website</a>
+      <a href="mailto:support@annmax1983.com" id="p-footer-email">Email</a>
+    </nav>
+  </div>
+</footer>
 <script>
-const I18N = {
-  en: {
-    title: '🔒 Privacy Policy', updated: 'Last updated: August 2026',
-    highlight: '<strong>Short version:</strong> FontFixer never reads, stores, or uploads webpage content. All font configuration stays in your browser. Free use is fully offline — the only network request is optional Pro license activation, which sends your license key and basic browser info to the license server. Our license server records the IP address of these requests solely for rate limiting and abuse prevention — never for profiling, advertising, or sharing with third parties.',
-    h1: 'Data Collection', p1: 'FontFixer does <strong>not</strong> collect or store any of the following:', l1: ['Browsing history or URLs visited', 'Page text, images, or content', 'Cookies or tracking identifiers', 'Usage analytics or telemetry'],
-    h2: 'Permissions', p2: 'FontFixer uses these permissions only to adjust page fonts:', l2: ['<strong>storage</strong> — Saves your font preferences locally. No webpage content is stored.', '<strong>scripting</strong> — Injects CSS to change page fonts. Does not read page text or data.', '<strong>activeTab</strong> — Only accesses the current tab when you interact with the extension.', '<strong>Host access</strong> — Lets saved styles be re-applied automatically on sites you have configured (Auto Apply). It never reads or uploads page content.'], p2note: 'Host access covers all sites so saved styles can be re-applied on any site you configure — it is never used to read or upload page content.',
-    h3: 'Data Storage', p3: 'All settings are stored locally in your browser using <code>chrome.storage.local</code>. Data is deleted when you uninstall the extension.',
-    h4: 'License Activation & Network', p4: 'Free use works fully offline. If you activate a Pro license, FontFixer sends your license key, a random install identifier, and basic browser info (browser version, language, timezone) to our license server (api.annmax1983.com) to validate the license. No webpage content is ever sent.',
-    h5: 'Open Source Fonts', p5: 'Built-in fonts (Noto Sans, Source Han Sans, Arial) are open-source or system fonts with commercial-use licenses.',
-    h6: 'Contact', p6: 'If you have questions, please open an issue on <a href="https://github.com/annmax1983/FontFixer">GitHub</a>.',
-    rights: 'All rights reserved.', gh: 'GitHub Repository'
-  },
-  'zh-CN': {
-    title: '🔒 隐私条款', updated: '最后更新：2026 年 8 月',
-    highlight: '<strong>简要说明：</strong>FontFixer 从不读取、存储或上传网页内容。所有字体配置保存在您的浏览器中。免费使用完全离线 — 唯一的网络请求是可选的 Pro 授权激活，它会向授权服务器发送您的授权密钥和基本浏览器信息。',
-    h1: '数据收集', p1: 'FontFixer <strong>不会</strong>收集或存储以下任何信息：', l1: ['浏览历史或访问的网址', '页面文字、图片或内容', 'Cookie 或跟踪标识符', '使用分析或遥测数据'],
-    h2: '权限说明', p2: 'FontFixer 仅在调整页面字体时使用以下权限：', l2: ['<strong>storage</strong> — 在本地保存字体偏好，不存储网页内容', '<strong>scripting</strong> — 注入 CSS 修改页面字体，不读取页面文字或数据', '<strong>activeTab</strong> — 仅在您与扩展交互时访问当前标签页', '<strong>主机权限</strong> — 用于在您已配置的网站上自动重放已保存的样式（自动应用），从不读取或上传网页内容'], p2note: '主机权限覆盖所有网站，以便在您配置的任何站点上自动重放已保存的样式 — 它从不用于读取或上传网页内容。',
-    h3: '数据存储', p3: '所有设置通过 <code>chrome.storage.local</code> 存储在浏览器本地。卸载扩展时数据会自动删除。',
-    h4: '授权激活与网络', p4: '免费使用完全离线。如果您激活 Pro 授权，FontFixer 会向我们的授权服务器（api.annmax1983.com）发送您的授权密钥、随机安装标识和基本浏览器信息（浏览器版本、语言、时区）以验证授权。永远不会发送任何网页内容。',
-    h5: '开源字体', p5: '内置字体（Noto Sans、思源黑体、Arial）均为开源或系统字体，具有商用授权。',
-    h6: '联系方式', p6: '如有疑问，请在 <a href="https://github.com/annmax1983/FontFixer">GitHub</a> 上提交 Issue。',
-    rights: '保留所有权利。', gh: 'GitHub 仓库'
-  },
-  ja: {
-    title: '🔒 プライバシーポリシー', updated: '最終更新：2026年8月',
-    highlight: '<strong>要約：</strong>FontFixer はウェブページのコンテンツを読み取り、保存、アップロードしません。すべてのフォント設定はブラウザ内に保存されます。無料利用は完全にオフライン — 唯一のネットワークリクエストは任意のProライセンス認証で、ライセンスキーと基本的なブラウザ情報をライセンスサーバーに送信します。',
-    h1: 'データ収集', p1: 'FontFixer は以下の情報を<strong>収集・保存しません</strong>：', l1: ['閲覧履歴またはアクセスしたURL', 'ページテキスト、画像、コンテンツ', 'Cookie または追跡識別子', '使用分析またはテレメトリ'],
-    h2: '権限', p2: 'FontFixer はページフォントの調整にのみ以下の権限を使用します：', l2: ['<strong>storage</strong> — フォント設定をローカル保存。ページコンテンツは保存しません。', '<strong>scripting</strong> — CSSを注入してフォントを変更。ページテキストやデータは読み取りません。', '<strong>activeTab</strong> — 拡張機能を操作した時のみ現在のタブにアクセス。', '<strong>ホストアクセス</strong> — 設定したサイトで保存済みのスタイルを自動的に再適用します（自動適用）。ページコンテンツの読み取りやアップロードは行いません。'], p2note: 'ホストアクセスは全サイトを対象とし、設定したサイトで保存済みスタイルを再適用するためにのみ使用されます — ページコンテンツの読み取りやアップロードには使用されません。',
-    h3: 'データ保存', p3: 'すべての設定は <code>chrome.storage.local</code> でローカル保存されます。',
-    h4: 'ライセンス認証とネットワーク', p4: '無料利用は完全にオフラインで動作します。Proライセンスを認証する場合、FontFixer はライセンスキー、ランダムなインストール識別子、基本的なブラウザ情報（ブラウザバージョン、言語、タイムゾーン）をライセンスサーバー（api.annmax1983.com）に送信します。ウェブページのコンテンツが送信されることはありません。 ライセンスサーバーはこれらのリクエストの IP アドレスを、レート制限と不正利用防止のみを目的として記録します。プロファイリング、広告、第三者提供には一切使用しません。',
-    h5: 'オープンソースフォント', p5: '内蔵フォント（Noto Sans、Source Han Sans、Arial）は商用ライセンスのオープンソースまたはシステムフォントです。',
-    h6: 'お問い合わせ', p6: 'ご質問は <a href="https://github.com/annmax1983/FontFixer">GitHub</a> で Issue を作成してください。',
-    rights: '全著作権所有。', gh: 'GitHub リポジトリ'
-  },
-  de: {
-    title: '🔒 Datenschutzrichtlinie', updated: 'Letzte Aktualisierung: August 2026',
-    highlight: '<strong>Kurzfassung:</strong> FontFixer liest, speichert oder überträgt keine Webseiteninhalte. Alle Schrifteinstellungen bleiben in Ihrem Browser. Die kostenlose Nutzung ist vollständig offline — die einzige Netzwerkanfrage ist die optionale Pro-Lizenzaktivierung, die Ihren Lizenzschlüssel und grundlegende Browserinformationen an den Lizenzserver sendet. Unser Lizenzserver protokolliert die IP-Adresse dieser Anfragen ausschließlich zur Ratenbegrenzung und Missbrauchsabwehr – niemals für Profiling, Werbung oder Weitergabe an Dritte.',
-    h1: 'Datenerfassung', p1: 'FontFixer <strong>erfasst oder speichert</strong> keine der folgenden Daten:', l1: ['Browserverlauf oder besuchte URLs', 'Seitentexte, Bilder oder Inhalte', 'Cookies oder Tracking-Kennungen', 'Nutzungsanalysen oder Telemetrie'],
-    h2: 'Berechtigungen', p2: 'FontFixer verwendet diese Berechtigungen ausschließlich zur Anpassung der Seitenschriften:', l2: ['<strong>storage</strong> — Speichert Schrifteinstellungen lokal. Keine Webseiteninhalte werden gespeichert.', '<strong>scripting</strong> — Injiziert CSS zur Schriftänderung. Liest keine Seitentexte oder Daten.', '<strong>activeTab</strong> — Greift nur auf den aktuellen Tab zu, wenn Sie die Erweiterung verwenden.', '<strong>Host-Zugriff</strong> — Damit gespeicherte Stile auf von Ihnen konfigurierten Websites automatisch erneut angewendet werden können (Auto-Anwenden). Er liest oder überträgt niemals Seiteninhalte.'], p2note: 'Der Host-Zugriff umfasst alle Websites, damit gespeicherte Stile auf jeder von Ihnen konfigurierten Website erneut angewendet werden können — er wird niemals zum Lesen oder Übertragen von Seiteninhalten verwendet.',
-    h3: 'Datenspeicherung', p3: 'Alle Einstellungen werden lokal im Browser über <code>chrome.storage.local</code> gespeichert.',
-    h4: 'Lizenzaktivierung und Netzwerk', p4: 'Die kostenlose Nutzung funktioniert vollständig offline. Wenn Sie eine Pro-Lizenz aktivieren, sendet FontFixer Ihren Lizenzschlüssel, eine zufällige Installationskennung und grundlegende Browserinformationen (Browserversion, Sprache, Zeitzone) an unseren Lizenzserver (api.annmax1983.com). Es werden niemals Webseiteninhalte gesendet.',
-    h5: 'Open-Source-Schriften', p5: 'Integrierte Schriften (Noto Sans, Source Han Sans, Arial) sind Open-Source- oder Systemschriften mit kommerzieller Lizenz.',
-    h6: 'Kontakt', p6: 'Bei Fragen erstellen Sie bitte ein Issue auf <a href="https://github.com/annmax1983/FontFixer">GitHub</a>.',
-    rights: 'Alle Rechte vorbehalten.', gh: 'GitHub-Repository'
-  },
-  es: {
-    title: '🔒 Política de Privacidad', updated: 'Última actualización: agosto de 2026',
-    highlight: '<strong>Resumen:</strong> FontFixer nunca lee, almacena ni sube contenido de páginas web. Toda la configuración de fuentes permanece en su navegador. El uso gratuito es totalmente offline — la única solicitud de red es la activación opcional de la licencia Pro, que envía su clave de licencia e información básica del navegador al servidor de licencias. Nuestro servidor de licencias registra la dirección IP de estas solicitudes únicamente para limitar la tasa de peticiones y evitar abusos; nunca para elaborar perfiles, publicidad ni compartirla con terceros.',
-    h1: 'Recopilación de Datos', p1: 'FontFixer <strong>no</strong> recopila ni almacena ninguna de las siguientes cosas:', l1: ['Historial de navegación o URLs visitadas', 'Texto, imágenes o contenido de páginas', 'Cookies o identificadores de seguimiento', 'Analíticas de uso o telemetría'],
-    h2: 'Permisos', p2: 'FontFixer usa estos permisos solo para ajustar las fuentes de las páginas:', l2: ['<strong>storage</strong> — Guarda preferencias de fuente localmente. No almacena contenido web.', '<strong>scripting</strong> — Inyecta CSS para cambiar fuentes. No lee texto ni datos de páginas.', '<strong>activeTab</strong> — Solo accede a la pestaña actual cuando interactúa con la extensión.', '<strong>Acceso a hosts</strong> — Permite reaplicar automáticamente los estilos guardados en sitios que haya configurado (Aplicación automática). Nunca lee ni sube contenido de páginas.'], p2note: 'El acceso a hosts cubre todos los sitios para que los estilos guardados puedan reaplicarse en cualquier sitio que configure — nunca se usa para leer o subir contenido de páginas.',
-    h3: 'Almacenamiento', p3: 'Todos los ajustes se almacenan localmente con <code>chrome.storage.local</code>.',
-    h4: 'Activación de licencia y red', p4: 'El uso gratuito funciona totalmente offline. Si activa una licencia Pro, FontFixer envía su clave de licencia, un identificador de instalación aleatorio e información básica del navegador (versión, idioma, zona horaria) a nuestro servidor de licencias (api.annmax1983.com). Nunca se envía contenido de páginas web.',
-    h5: 'Fuentes de Código Abierto', p5: 'Las fuentes integradas (Noto Sans, Source Han Sans, Arial) son de código abierto o del sistema con licencia comercial.',
-    h6: 'Contacto', p6: 'Si tiene preguntas, abra un issue en <a href="https://github.com/annmax1983/FontFixer">GitHub</a>.',
-    rights: 'Todos los derechos reservados.', gh: 'Repositorio GitHub'
-  },
-  fr: {
-    title: '🔒 Politique de Confidentialité', updated: 'Dernière mise à jour : août 2026',
-    highlight: '<strong>Résumé :</strong> FontFixer ne lit, ne stocke ni ne télécharge jamais le contenu des pages web. Toute la configuration reste dans votre navigateur. L\'utilisation gratuite est entièrement hors ligne — la seule requête réseau est l\'activation facultative de la licence Pro, qui envoie votre clé de licence et des informations de base sur le navigateur au serveur de licences. Notre serveur de licences enregistre l\'adresse IP de ces requêtes uniquement pour limiter le débit et prévenir les abus — jamais pour du profilage, de la publicité ou un partage avec des tiers.',
-    h1: 'Collecte de Données', p1: 'FontFixer ne collecte <strong>ni ne stocke</strong> aucune des informations suivantes :', l1: ['Historique de navigation ou URLs visitées', 'Texte, images ou contenu des pages', 'Cookies ou identifiants de suivi', 'Analyses d\'utilisation ou télémétrie'],
-    h2: 'Permissions', p2: 'FontFixer n\'utilise ces permissions que pour ajuster les polices des pages :', l2: ['<strong>storage</strong> — Enregistre vos préférences de police localement.', '<strong>scripting</strong> — Injecte du CSS pour changer les polices. Ne lit pas le contenu des pages.', '<strong>activeTab</strong> — N\'accède à l\'onglet actuel que lorsque vous interagissez avec l\'extension.', '<strong>Accès aux hôtes</strong> — Permet de réappliquer automatiquement les styles enregistrés sur les sites que vous avez configurés (Application automatique). Il ne lit ni ne télécharge jamais le contenu des pages.'], p2note: 'L\'accès aux hôtes couvre tous les sites afin que les styles enregistrés puissent être réappliqués sur tout site configuré — il n\'est jamais utilisé pour lire ou télécharger le contenu des pages.',
-    h3: 'Stockage', p3: 'Tous les paramètres sont stockés localement via <code>chrome.storage.local</code>.',
-    h4: 'Activation de la licence et réseau', p4: 'L\'utilisation gratuite fonctionne entièrement hors ligne. Si vous activez une licence Pro, FontFixer envoie votre clé de licence, un identifiant d\'installation aléatoire et des informations de base sur le navigateur (version, langue, fuseau horaire) à notre serveur de licences (api.annmax1983.com). Aucun contenu de page web n\'est jamais envoyé.',
-    h5: 'Polices Open Source', p5: 'Les polices intégrées (Noto Sans, Source Han Sans, Arial) sont open source ou des polices système avec licence commerciale.',
-    h6: 'Contact', p6: 'Pour toute question, ouvrez un issue sur <a href="https://github.com/annmax1983/FontFixer">GitHub</a>.',
-    rights: 'Tous droits réservés.', gh: 'Dépôt GitHub'
+const MODEL = {"langs":{"en":{"summary":"\u003cstrong\u003eShort version:\u003c/strong\u003e FontFixer never reads, stores, or uploads webpage content. All font configuration stays in your browser. Free use is fully offline — the only network request is optional Pro license activation, which sends your license key and basic browser info to the license server. Our license server records the IP address of these requests solely for rate limiting and abuse prevention — never for profiling, advertising, or sharing with third parties.","sections":[{"t":"Data Collection","html":"\u003cp\u003eFontFixer does \u003cstrong\u003enot\u003c/strong\u003e collect or store any of the following:\u003c/p\u003e\u003cul\u003e\u003cli\u003eBrowsing history or URLs visited\u003c/li\u003e\u003cli\u003ePage text, images, or content\u003c/li\u003e\u003cli\u003eCookies or tracking identifiers\u003c/li\u003e\u003cli\u003eUsage analytics or telemetry\u003c/li\u003e\u003c/ul\u003e"},{"t":"Permissions","html":"\u003cp\u003eFontFixer uses these permissions only to adjust page fonts:\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003cstrong\u003estorage\u003c/strong\u003e — Saves your font preferences locally. No webpage content is stored.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003escripting\u003c/strong\u003e — Injects CSS to change page fonts. Does not read page text or data.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eactiveTab\u003c/strong\u003e — Only accesses the current tab when you interact with the extension.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eHost access\u003c/strong\u003e — Lets saved styles be re-applied automatically on sites you have configured (Auto Apply). It never reads or uploads page content.\u003c/li\u003e\u003c/ul\u003e\u003cdiv class=\"note\"\u003eHost access covers all sites so saved styles can be re-applied on any site you configure — it is never used to read or upload page content.\u003c/div\u003e"},{"t":"Data Storage","html":"\u003cp\u003eAll settings are stored locally in your browser using \u003ccode\u003echrome.storage.local\u003c/code\u003e. Data is deleted when you uninstall the extension.\u003c/p\u003e"},{"t":"License Activation & Network","html":"\u003cp\u003eFree use works fully offline. If you activate a Pro license, FontFixer sends your license key, a random install identifier, and basic browser info (browser version, language, timezone) to our license server (api.annmax1983.com) to validate the license. No webpage content is ever sent.\u003c/p\u003e"},{"t":"Open Source Fonts","html":"\u003cp\u003eBuilt-in fonts (Noto Sans, Source Han Sans, Arial) are open-source or system fonts with commercial-use licenses.\u003c/p\u003e"},{"t":"Data retention & deletion","html":"\u003cp\u003eYour settings and content stay in your browser until you delete them in the extension or uninstall it. Uninstalling removes the extension's local data. Nothing is retained on our servers, because your content is never sent to them.\u003c/p\u003e"},{"t":"Changes to this policy","html":"\u003cp\u003eIf this policy changes, the revised version will be published on this page with a new date. Material changes will be noted in the extension's release notes.\u003c/p\u003e"},{"t":"Contact","html":"\u003cp\u003eQuestions about this policy? Email \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e or open an issue on \u003ca href=\"https://github.com/annmax1983/FontFixer\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.\u003c/p\u003e"}]},"zh":{"summary":"\u003cstrong\u003e简要说明：\u003c/strong\u003eFontFixer 从不读取、存储或上传网页内容。所有字体配置保存在您的浏览器中。免费使用完全离线 — 唯一的网络请求是可选的 Pro 授权激活，它会向授权服务器发送您的授权密钥和基本浏览器信息。","sections":[{"t":"数据收集","html":"\u003cp\u003eFontFixer \u003cstrong\u003e不会\u003c/strong\u003e收集或存储以下任何信息：\u003c/p\u003e\u003cul\u003e\u003cli\u003e浏览历史或访问的网址\u003c/li\u003e\u003cli\u003e页面文字、图片或内容\u003c/li\u003e\u003cli\u003eCookie 或跟踪标识符\u003c/li\u003e\u003cli\u003e使用分析或遥测数据\u003c/li\u003e\u003c/ul\u003e"},{"t":"权限说明","html":"\u003cp\u003eFontFixer 仅在调整页面字体时使用以下权限：\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003cstrong\u003estorage\u003c/strong\u003e — 在本地保存字体偏好，不存储网页内容\u003c/li\u003e\u003cli\u003e\u003cstrong\u003escripting\u003c/strong\u003e — 注入 CSS 修改页面字体，不读取页面文字或数据\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eactiveTab\u003c/strong\u003e — 仅在您与扩展交互时访问当前标签页\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e主机权限\u003c/strong\u003e — 用于在您已配置的网站上自动重放已保存的样式（自动应用），从不读取或上传网页内容\u003c/li\u003e\u003c/ul\u003e\u003cdiv class=\"note\"\u003e主机权限覆盖所有网站，以便在您配置的任何站点上自动重放已保存的样式 — 它从不用于读取或上传网页内容。\u003c/div\u003e"},{"t":"数据存储","html":"\u003cp\u003e所有设置通过 \u003ccode\u003echrome.storage.local\u003c/code\u003e 存储在浏览器本地。卸载扩展时数据会自动删除。\u003c/p\u003e"},{"t":"授权激活与网络","html":"\u003cp\u003e免费使用完全离线。如果您激活 Pro 授权，FontFixer 会向我们的授权服务器（api.annmax1983.com）发送您的授权密钥、随机安装标识和基本浏览器信息（浏览器版本、语言、时区）以验证授权。永远不会发送任何网页内容。\u003c/p\u003e"},{"t":"开源字体","html":"\u003cp\u003e内置字体（Noto Sans、思源黑体、Arial）均为开源或系统字体，具有商用授权。\u003c/p\u003e"},{"t":"数据保留与删除","html":"\u003cp\u003e你的设置和内容保存在浏览器中，直到你在扩展内删除它们或卸载扩展。卸载会清除扩展的本地数据。我们的服务器不保留任何内容，因为你的内容从不会发送到那里。\u003c/p\u003e"},{"t":"政策变更","html":"\u003cp\u003e如果本政策发生变更，修订后的版本会发布在本页并更新日期。重要变更会在扩展的版本说明中注明。\u003c/p\u003e"},{"t":"联系我们","html":"\u003cp\u003e对本政策有疑问？请发邮件至 \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e，或在 \u003ca href=\"https://github.com/annmax1983/FontFixer\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e 提交 issue。\u003c/p\u003e"}]},"ja":{"summary":"\u003cstrong\u003e要約：\u003c/strong\u003eFontFixer はウェブページのコンテンツを読み取り、保存、アップロードしません。すべてのフォント設定はブラウザ内に保存されます。無料利用は完全にオフライン — 唯一のネットワークリクエストは任意のProライセンス認証で、ライセンスキーと基本的なブラウザ情報をライセンスサーバーに送信します。","sections":[{"t":"データ収集","html":"\u003cp\u003eFontFixer は以下の情報を\u003cstrong\u003e収集・保存しません\u003c/strong\u003e：\u003c/p\u003e\u003cul\u003e\u003cli\u003e閲覧履歴またはアクセスしたURL\u003c/li\u003e\u003cli\u003eページテキスト、画像、コンテンツ\u003c/li\u003e\u003cli\u003eCookie または追跡識別子\u003c/li\u003e\u003cli\u003e使用分析またはテレメトリ\u003c/li\u003e\u003c/ul\u003e"},{"t":"権限","html":"\u003cp\u003eFontFixer はページフォントの調整にのみ以下の権限を使用します：\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003cstrong\u003estorage\u003c/strong\u003e — フォント設定をローカル保存。ページコンテンツは保存しません。\u003c/li\u003e\u003cli\u003e\u003cstrong\u003escripting\u003c/strong\u003e — CSSを注入してフォントを変更。ページテキストやデータは読み取りません。\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eactiveTab\u003c/strong\u003e — 拡張機能を操作した時のみ現在のタブにアクセス。\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eホストアクセス\u003c/strong\u003e — 設定したサイトで保存済みのスタイルを自動的に再適用します（自動適用）。ページコンテンツの読み取りやアップロードは行いません。\u003c/li\u003e\u003c/ul\u003e\u003cdiv class=\"note\"\u003eホストアクセスは全サイトを対象とし、設定したサイトで保存済みスタイルを再適用するためにのみ使用されます — ページコンテンツの読み取りやアップロードには使用されません。\u003c/div\u003e"},{"t":"データ保存","html":"\u003cp\u003eすべての設定は \u003ccode\u003echrome.storage.local\u003c/code\u003e でローカル保存されます。\u003c/p\u003e"},{"t":"ライセンス認証とネットワーク","html":"\u003cp\u003e無料利用は完全にオフラインで動作します。Proライセンスを認証する場合、FontFixer はライセンスキー、ランダムなインストール識別子、基本的なブラウザ情報（ブラウザバージョン、言語、タイムゾーン）をライセンスサーバー（api.annmax1983.com）に送信します。ウェブページのコンテンツが送信されることはありません。 ライセンスサーバーはこれらのリクエストの IP アドレスを、レート制限と不正利用防止のみを目的として記録します。プロファイリング、広告、第三者提供には一切使用しません。\u003c/p\u003e"},{"t":"オープンソースフォント","html":"\u003cp\u003e内蔵フォント（Noto Sans、Source Han Sans、Arial）は商用ライセンスのオープンソースまたはシステムフォントです。\u003c/p\u003e"},{"t":"データの保存期間と削除","html":"\u003cp\u003e設定とコンテンツは、拡張機能内で削除するかアンインストールするまでブラウザに保存されます。アンインストールすると拡張機能のローカルデータは削除されます。コンテンツがサーバーへ送信されることはないため、当方のサーバーには何も保持されません。\u003c/p\u003e"},{"t":"ポリシーの変更","html":"\u003cp\u003eこのポリシーを変更する場合は、改訂版をこのページに新しい日付で掲載します。重要な変更は拡張機能のリリースノートにも記載します。\u003c/p\u003e"},{"t":"お問い合わせ","html":"\u003cp\u003eこのポリシーについてのご質問は、\u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e へメールするか、\u003ca href=\"https://github.com/annmax1983/FontFixer\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e で issue を作成してください。\u003c/p\u003e"}]},"de":{"summary":"\u003cstrong\u003eKurzfassung:\u003c/strong\u003e FontFixer liest, speichert oder überträgt keine Webseiteninhalte. Alle Schrifteinstellungen bleiben in Ihrem Browser. Die kostenlose Nutzung ist vollständig offline — die einzige Netzwerkanfrage ist die optionale Pro-Lizenzaktivierung, die Ihren Lizenzschlüssel und grundlegende Browserinformationen an den Lizenzserver sendet. Unser Lizenzserver protokolliert die IP-Adresse dieser Anfragen ausschließlich zur Ratenbegrenzung und Missbrauchsabwehr – niemals für Profiling, Werbung oder Weitergabe an Dritte.","sections":[{"t":"Datenerfassung","html":"\u003cp\u003eFontFixer \u003cstrong\u003eerfasst oder speichert\u003c/strong\u003e keine der folgenden Daten:\u003c/p\u003e\u003cul\u003e\u003cli\u003eBrowserverlauf oder besuchte URLs\u003c/li\u003e\u003cli\u003eSeitentexte, Bilder oder Inhalte\u003c/li\u003e\u003cli\u003eCookies oder Tracking-Kennungen\u003c/li\u003e\u003cli\u003eNutzungsanalysen oder Telemetrie\u003c/li\u003e\u003c/ul\u003e"},{"t":"Berechtigungen","html":"\u003cp\u003eFontFixer verwendet diese Berechtigungen ausschließlich zur Anpassung der Seitenschriften:\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003cstrong\u003estorage\u003c/strong\u003e — Speichert Schrifteinstellungen lokal. Keine Webseiteninhalte werden gespeichert.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003escripting\u003c/strong\u003e — Injiziert CSS zur Schriftänderung. Liest keine Seitentexte oder Daten.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eactiveTab\u003c/strong\u003e — Greift nur auf den aktuellen Tab zu, wenn Sie die Erweiterung verwenden.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eHost-Zugriff\u003c/strong\u003e — Damit gespeicherte Stile auf von Ihnen konfigurierten Websites automatisch erneut angewendet werden können (Auto-Anwenden). Er liest oder überträgt niemals Seiteninhalte.\u003c/li\u003e\u003c/ul\u003e\u003cdiv class=\"note\"\u003eDer Host-Zugriff umfasst alle Websites, damit gespeicherte Stile auf jeder von Ihnen konfigurierten Website erneut angewendet werden können — er wird niemals zum Lesen oder Übertragen von Seiteninhalten verwendet.\u003c/div\u003e"},{"t":"Datenspeicherung","html":"\u003cp\u003eAlle Einstellungen werden lokal im Browser über \u003ccode\u003echrome.storage.local\u003c/code\u003e gespeichert.\u003c/p\u003e"},{"t":"Lizenzaktivierung und Netzwerk","html":"\u003cp\u003eDie kostenlose Nutzung funktioniert vollständig offline. Wenn Sie eine Pro-Lizenz aktivieren, sendet FontFixer Ihren Lizenzschlüssel, eine zufällige Installationskennung und grundlegende Browserinformationen (Browserversion, Sprache, Zeitzone) an unseren Lizenzserver (api.annmax1983.com). Es werden niemals Webseiteninhalte gesendet.\u003c/p\u003e"},{"t":"Open-Source-Schriften","html":"\u003cp\u003eIntegrierte Schriften (Noto Sans, Source Han Sans, Arial) sind Open-Source- oder Systemschriften mit kommerzieller Lizenz.\u003c/p\u003e"},{"t":"Aufbewahrung und Löschung","html":"\u003cp\u003eDeine Einstellungen und Inhalte bleiben im Browser, bis du sie in der Erweiterung löschst oder sie deinstallierst. Beim Deinstallieren werden die lokalen Daten der Erweiterung entfernt. Auf unseren Servern wird nichts aufbewahrt, weil deine Inhalte nie dorthin gesendet werden.\u003c/p\u003e"},{"t":"Änderungen dieser Erklärung","html":"\u003cp\u003eWenn sich diese Erklärung ändert, wird die überarbeitete Fassung mit einem neuen Datum auf dieser Seite veröffentlicht. Wesentliche Änderungen werden in den Versionshinweisen der Erweiterung genannt.\u003c/p\u003e"},{"t":"Kontakt","html":"\u003cp\u003eFragen zu dieser Erklärung? Schreib an \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e oder öffne ein Issue auf \u003ca href=\"https://github.com/annmax1983/FontFixer\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.\u003c/p\u003e"}]},"es":{"summary":"\u003cstrong\u003eResumen:\u003c/strong\u003e FontFixer nunca lee, almacena ni sube contenido de páginas web. Toda la configuración de fuentes permanece en su navegador. El uso gratuito es totalmente offline — la única solicitud de red es la activación opcional de la licencia Pro, que envía su clave de licencia e información básica del navegador al servidor de licencias. Nuestro servidor de licencias registra la dirección IP de estas solicitudes únicamente para limitar la tasa de peticiones y evitar abusos; nunca para elaborar perfiles, publicidad ni compartirla con terceros.","sections":[{"t":"Recopilación de Datos","html":"\u003cp\u003eFontFixer \u003cstrong\u003eno\u003c/strong\u003e recopila ni almacena ninguna de las siguientes cosas:\u003c/p\u003e\u003cul\u003e\u003cli\u003eHistorial de navegación o URLs visitadas\u003c/li\u003e\u003cli\u003eTexto, imágenes o contenido de páginas\u003c/li\u003e\u003cli\u003eCookies o identificadores de seguimiento\u003c/li\u003e\u003cli\u003eAnalíticas de uso o telemetría\u003c/li\u003e\u003c/ul\u003e"},{"t":"Permisos","html":"\u003cp\u003eFontFixer usa estos permisos solo para ajustar las fuentes de las páginas:\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003cstrong\u003estorage\u003c/strong\u003e — Guarda preferencias de fuente localmente. No almacena contenido web.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003escripting\u003c/strong\u003e — Inyecta CSS para cambiar fuentes. No lee texto ni datos de páginas.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eactiveTab\u003c/strong\u003e — Solo accede a la pestaña actual cuando interactúa con la extensión.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eAcceso a hosts\u003c/strong\u003e — Permite reaplicar automáticamente los estilos guardados en sitios que haya configurado (Aplicación automática). Nunca lee ni sube contenido de páginas.\u003c/li\u003e\u003c/ul\u003e\u003cdiv class=\"note\"\u003eEl acceso a hosts cubre todos los sitios para que los estilos guardados puedan reaplicarse en cualquier sitio que configure — nunca se usa para leer o subir contenido de páginas.\u003c/div\u003e"},{"t":"Almacenamiento","html":"\u003cp\u003eTodos los ajustes se almacenan localmente con \u003ccode\u003echrome.storage.local\u003c/code\u003e.\u003c/p\u003e"},{"t":"Activación de licencia y red","html":"\u003cp\u003eEl uso gratuito funciona totalmente offline. Si activa una licencia Pro, FontFixer envía su clave de licencia, un identificador de instalación aleatorio e información básica del navegador (versión, idioma, zona horaria) a nuestro servidor de licencias (api.annmax1983.com). Nunca se envía contenido de páginas web.\u003c/p\u003e"},{"t":"Fuentes de Código Abierto","html":"\u003cp\u003eLas fuentes integradas (Noto Sans, Source Han Sans, Arial) son de código abierto o del sistema con licencia comercial.\u003c/p\u003e"},{"t":"Conservación y eliminación de datos","html":"\u003cp\u003eTus ajustes y contenidos permanecen en el navegador hasta que los elimines en la extensión o la desinstales. Al desinstalarla se borran los datos locales de la extensión. No conservamos nada en nuestros servidores porque tus contenidos nunca se envían allí.\u003c/p\u003e"},{"t":"Cambios en esta política","html":"\u003cp\u003eSi esta política cambia, la versión revisada se publicará en esta página con una nueva fecha. Los cambios importantes se indicarán en las notas de la versión de la extensión.\u003c/p\u003e"},{"t":"Contacto","html":"\u003cp\u003e¿Preguntas sobre esta política? Escribe a \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e o abre un issue en \u003ca href=\"https://github.com/annmax1983/FontFixer\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.\u003c/p\u003e"}]},"fr":{"summary":"\u003cstrong\u003eRésumé :\u003c/strong\u003e FontFixer ne lit, ne stocke ni ne télécharge jamais le contenu des pages web. Toute la configuration reste dans votre navigateur. L'utilisation gratuite est entièrement hors ligne — la seule requête réseau est l'activation facultative de la licence Pro, qui envoie votre clé de licence et des informations de base sur le navigateur au serveur de licences. Notre serveur de licences enregistre l'adresse IP de ces requêtes uniquement pour limiter le débit et prévenir les abus — jamais pour du profilage, de la publicité ou un partage avec des tiers.","sections":[{"t":"Collecte de Données","html":"\u003cp\u003eFontFixer ne collecte \u003cstrong\u003eni ne stocke\u003c/strong\u003e aucune des informations suivantes :\u003c/p\u003e\u003cul\u003e\u003cli\u003eHistorique de navigation ou URLs visitées\u003c/li\u003e\u003cli\u003eTexte, images ou contenu des pages\u003c/li\u003e\u003cli\u003eCookies ou identifiants de suivi\u003c/li\u003e\u003cli\u003eAnalyses d'utilisation ou télémétrie\u003c/li\u003e\u003c/ul\u003e"},{"t":"Permissions","html":"\u003cp\u003eFontFixer n'utilise ces permissions que pour ajuster les polices des pages :\u003c/p\u003e\u003cul\u003e\u003cli\u003e\u003cstrong\u003estorage\u003c/strong\u003e — Enregistre vos préférences de police localement.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003escripting\u003c/strong\u003e — Injecte du CSS pour changer les polices. Ne lit pas le contenu des pages.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eactiveTab\u003c/strong\u003e — N'accède à l'onglet actuel que lorsque vous interagissez avec l'extension.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eAccès aux hôtes\u003c/strong\u003e — Permet de réappliquer automatiquement les styles enregistrés sur les sites que vous avez configurés (Application automatique). Il ne lit ni ne télécharge jamais le contenu des pages.\u003c/li\u003e\u003c/ul\u003e\u003cdiv class=\"note\"\u003eL'accès aux hôtes couvre tous les sites afin que les styles enregistrés puissent être réappliqués sur tout site configuré — il n'est jamais utilisé pour lire ou télécharger le contenu des pages.\u003c/div\u003e"},{"t":"Stockage","html":"\u003cp\u003eTous les paramètres sont stockés localement via \u003ccode\u003echrome.storage.local\u003c/code\u003e.\u003c/p\u003e"},{"t":"Activation de la licence et réseau","html":"\u003cp\u003eL'utilisation gratuite fonctionne entièrement hors ligne. Si vous activez une licence Pro, FontFixer envoie votre clé de licence, un identifiant d'installation aléatoire et des informations de base sur le navigateur (version, langue, fuseau horaire) à notre serveur de licences (api.annmax1983.com). Aucun contenu de page web n'est jamais envoyé.\u003c/p\u003e"},{"t":"Polices Open Source","html":"\u003cp\u003eLes polices intégrées (Noto Sans, Source Han Sans, Arial) sont open source ou des polices système avec licence commerciale.\u003c/p\u003e"},{"t":"Conservation et suppression des données","html":"\u003cp\u003eVos réglages et contenus restent dans le navigateur jusqu'à ce que vous les supprimiez dans l'extension ou que vous la désinstalliez. La désinstallation efface les données locales de l'extension. Rien n'est conservé sur nos serveurs, car vos contenus ne leur sont jamais envoyés.\u003c/p\u003e"},{"t":"Modifications de cette politique","html":"\u003cp\u003eSi cette politique change, la version révisée sera publiée sur cette page avec une nouvelle date. Les changements importants seront signalés dans les notes de version de l'extension.\u003c/p\u003e"},{"t":"Contact","html":"\u003cp\u003eDes questions sur cette politique ? Écrivez à \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e ou ouvrez un ticket sur \u003ca href=\"https://github.com/annmax1983/FontFixer\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.\u003c/p\u003e"}]}},"staticOnly":false};
+const UI_ALL = {"en":{"privacyTitle":"Privacy Policy","home":"Home","onThisPage":"On this page","lastUpdated":"Last updated: October 2026","chips":["Runs on your device","No analytics","No account","Licence optional"],"permissionsTitle":"Permissions","permissionsIntro":"The extension requests only these permissions:","retentionTitle":"Data retention & deletion","retentionBody":"Your settings and content stay in your browser until you delete them in the extension or uninstall it. Uninstalling removes the extension's local data. Nothing is retained on our servers, because your content is never sent to them.","syncCaveat":"If you enabled a feature that uses your browser account's sync, a copy may remain in that account. You can manage or remove it in your browser's sync settings.","changesTitle":"Changes to this policy","changesBody":"If this policy changes, the revised version will be published on this page with a new date. Material changes will be noted in the extension's release notes.","contactTitle":"Contact","contactBody":"Questions about this policy? Email \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e or open an issue on \u003ca href=\"{github}\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.","footerHome":"Home","footerGithub":"GitHub","footerSite":"Website","footerEmail":"Email","index":{"navFeatures":"Features","navPlans":"Free & Premium","navPrivacy":"Privacy","navSupport":"Support","eyebrow":"Chrome & Edge extension","badgeFree":"Free + Premium","badgeLocal":"Runs locally","badgeNoTrack":"No tracking","badgeBrowsers":"Chrome & Edge","ctaGet":"Get the extension","ctaPrivacy":"Privacy policy","ctaSource":"View source","featuresTitle":"Everything it does","featuresLead":"The core features at a glance.","moreTitle":"Also included","proLabel":"Premium","freeLabel":"Free","premiumLabel":"Premium","planTitle":"Free vs Premium","planLead":"The free tier is a complete tool, not a trial. Premium is optional.","privacyTitle":"Private by design","privacyLead":"Your data stays on your device. No account, no analytics, no tracking. Read exactly what is stored and when the extension uses the network.","privacyPoints":["Local processing","No account","Optional licence"],"privacyCta":"Read the privacy policy","supportEyebrow":"Support the developer","supportHint":"If this extension helps you, you can buy me a coffee.","footerMore":"More extensions","footerPrivacy":"Privacy","footerGithub":"GitHub","footerSite":"Website"}},"zh":{"privacyTitle":"隐私政策","home":"首页","onThisPage":"本页目录","lastUpdated":"最后更新：2026 年 10 月","chips":["在你的设备上运行","无统计追踪","无需账号","授权可选"],"permissionsTitle":"权限说明","permissionsIntro":"扩展只请求以下权限：","retentionTitle":"数据保留与删除","retentionBody":"你的设置和内容保存在浏览器中，直到你在扩展内删除它们或卸载扩展。卸载会清除扩展的本地数据。我们的服务器不保留任何内容，因为你的内容从不会发送到那里。","syncCaveat":"如果你启用了使用浏览器账号同步的功能，该账号中可能保留一份副本，可在浏览器的同步设置中管理或删除。","changesTitle":"政策变更","changesBody":"如果本政策发生变更，修订后的版本会发布在本页并更新日期。重要变更会在扩展的版本说明中注明。","contactTitle":"联系我们","contactBody":"对本政策有疑问？请发邮件至 \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e，或在 \u003ca href=\"{github}\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e 提交 issue。","footerHome":"首页","footerGithub":"GitHub","footerSite":"官网","footerEmail":"邮件","index":{"navFeatures":"功能","navPlans":"免费与高级版","navPrivacy":"隐私","navSupport":"支持","eyebrow":"Chrome 与 Edge 扩展","badgeFree":"免费 + 高级版","badgeLocal":"本地运行","badgeNoTrack":"无追踪","badgeBrowsers":"Chrome 与 Edge","ctaGet":"获取扩展","ctaPrivacy":"隐私政策","ctaSource":"查看源码","featuresTitle":"全部功能","featuresLead":"核心功能一览。","moreTitle":"还包括","proLabel":"高级版","freeLabel":"免费版","premiumLabel":"高级版","planTitle":"免费版与高级版","planLead":"免费版是完整工具，不是试用版。高级功能完全可选。","privacyTitle":"隐私优先","privacyLead":"你的数据留在设备上。无需账号，没有统计，没有追踪。了解具体存储了什么，以及扩展何时联网。","privacyPoints":["本地处理","无需账号","授权可选"],"privacyCta":"阅读隐私政策","supportEyebrow":"支持开发者","supportHint":"如果这个扩展对你有帮助，可以请我喝杯咖啡。","footerMore":"更多扩展","footerPrivacy":"隐私","footerGithub":"GitHub","footerSite":"官网"}},"ja":{"privacyTitle":"プライバシーポリシー","home":"ホーム","onThisPage":"目次","lastUpdated":"最終更新：2026年10月","chips":["端末上で動作","分析なし","アカウント不要","ライセンスは任意"],"permissionsTitle":"権限","permissionsIntro":"この拡張機能が要求する権限は次のとおりです：","retentionTitle":"データの保存期間と削除","retentionBody":"設定とコンテンツは、拡張機能内で削除するかアンインストールするまでブラウザに保存されます。アンインストールすると拡張機能のローカルデータは削除されます。コンテンツがサーバーへ送信されることはないため、当方のサーバーには何も保持されません。","syncCaveat":"ブラウザのアカウント同期を使う機能を有効にした場合、そのアカウントにコピーが残ることがあります。ブラウザの同期設定から管理・削除できます。","changesTitle":"ポリシーの変更","changesBody":"このポリシーを変更する場合は、改訂版をこのページに新しい日付で掲載します。重要な変更は拡張機能のリリースノートにも記載します。","contactTitle":"お問い合わせ","contactBody":"このポリシーについてのご質問は、\u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e へメールするか、\u003ca href=\"{github}\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e で issue を作成してください。","footerHome":"ホーム","footerGithub":"GitHub","footerSite":"公式サイト","footerEmail":"メール","index":{"navFeatures":"機能","navPlans":"無料とPremium","navPrivacy":"プライバシー","navSupport":"サポート","eyebrow":"Chrome & Edge 拡張機能","badgeFree":"無料 + Premium","badgeLocal":"端末上で動作","badgeNoTrack":"トラッキングなし","badgeBrowsers":"Chrome & Edge","ctaGet":"拡張機能を入手","ctaPrivacy":"プライバシーポリシー","ctaSource":"ソースを見る","featuresTitle":"すべての機能","featuresLead":"主な機能を一覧で。","moreTitle":"その他の機能","proLabel":"Premium","freeLabel":"無料版","premiumLabel":"Premium","planTitle":"無料版とPremium","planLead":"無料版は試用版ではなく、完成したツールです。Premium は任意です。","privacyTitle":"プライバシー優先","privacyLead":"データは端末上に残ります。アカウント、分析、トラッキングはありません。何が保存され、いつ通信するかを確認できます。","privacyPoints":["端末内で処理","アカウント不要","ライセンスは任意"],"privacyCta":"プライバシーポリシーを読む","supportEyebrow":"開発者を支援","supportHint":"この拡張機能が役に立ったら、コーヒーをごちそうしてください。","footerMore":"他の拡張機能","footerPrivacy":"プライバシー","footerGithub":"GitHub","footerSite":"公式サイト"}},"de":{"privacyTitle":"Datenschutzerklärung","home":"Startseite","onThisPage":"Auf dieser Seite","lastUpdated":"Zuletzt aktualisiert: Oktober 2026","chips":["Läuft auf deinem Gerät","Keine Analyse","Kein Konto","Lizenz optional"],"permissionsTitle":"Berechtigungen","permissionsIntro":"Die Erweiterung fordert nur diese Berechtigungen an:","retentionTitle":"Aufbewahrung und Löschung","retentionBody":"Deine Einstellungen und Inhalte bleiben im Browser, bis du sie in der Erweiterung löschst oder sie deinstallierst. Beim Deinstallieren werden die lokalen Daten der Erweiterung entfernt. Auf unseren Servern wird nichts aufbewahrt, weil deine Inhalte nie dorthin gesendet werden.","syncCaveat":"Wenn du eine Funktion mit der Kontosynchronisierung deines Browsers aktiviert hast, kann eine Kopie in diesem Konto verbleiben. Du kannst sie in den Synchronisierungseinstellungen deines Browsers verwalten oder löschen.","changesTitle":"Änderungen dieser Erklärung","changesBody":"Wenn sich diese Erklärung ändert, wird die überarbeitete Fassung mit einem neuen Datum auf dieser Seite veröffentlicht. Wesentliche Änderungen werden in den Versionshinweisen der Erweiterung genannt.","contactTitle":"Kontakt","contactBody":"Fragen zu dieser Erklärung? Schreib an \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e oder öffne ein Issue auf \u003ca href=\"{github}\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.","footerHome":"Startseite","footerGithub":"GitHub","footerSite":"Website","footerEmail":"E-Mail","index":{"navFeatures":"Funktionen","navPlans":"Free & Premium","navPrivacy":"Datenschutz","navSupport":"Support","eyebrow":"Chrome- und Edge-Erweiterung","badgeFree":"Free + Premium","badgeLocal":"Läuft lokal","badgeNoTrack":"Kein Tracking","badgeBrowsers":"Chrome & Edge","ctaGet":"Erweiterung holen","ctaPrivacy":"Datenschutzerklärung","ctaSource":"Quellcode ansehen","featuresTitle":"Alle Funktionen","featuresLead":"Die wichtigsten Funktionen im Überblick.","moreTitle":"Außerdem","proLabel":"Premium","freeLabel":"Free","premiumLabel":"Premium","planTitle":"Free vs. Premium","planLead":"Die kostenlose Version ist ein vollständiges Werkzeug, keine Testversion. Premium ist optional.","privacyTitle":"Privat by Design","privacyLead":"Deine Daten bleiben auf deinem Gerät. Kein Konto, keine Analyse, kein Tracking. Lies genau, was gespeichert wird und wann die Erweiterung das Netz nutzt.","privacyPoints":["Lokale Verarbeitung","Kein Konto","Lizenz optional"],"privacyCta":"Datenschutzerklärung lesen","supportEyebrow":"Unterstütze die Entwicklung","supportHint":"Wenn dir die Erweiterung hilft, spendier mir einen Kaffee.","footerMore":"Weitere Erweiterungen","footerPrivacy":"Datenschutz","footerGithub":"GitHub","footerSite":"Website"}},"es":{"privacyTitle":"Política de privacidad","home":"Inicio","onThisPage":"En esta página","lastUpdated":"Última actualización: octubre de 2026","chips":["Se ejecuta en tu dispositivo","Sin analíticas","Sin cuenta","Licencia opcional"],"permissionsTitle":"Permisos","permissionsIntro":"La extensión solo solicita estos permisos:","retentionTitle":"Conservación y eliminación de datos","retentionBody":"Tus ajustes y contenidos permanecen en el navegador hasta que los elimines en la extensión o la desinstales. Al desinstalarla se borran los datos locales de la extensión. No conservamos nada en nuestros servidores porque tus contenidos nunca se envían allí.","syncCaveat":"Si activaste una función que usa la sincronización de la cuenta del navegador, puede quedar una copia en esa cuenta. Puedes gestionarla o eliminarla en los ajustes de sincronización del navegador.","changesTitle":"Cambios en esta política","changesBody":"Si esta política cambia, la versión revisada se publicará en esta página con una nueva fecha. Los cambios importantes se indicarán en las notas de la versión de la extensión.","contactTitle":"Contacto","contactBody":"¿Preguntas sobre esta política? Escribe a \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e o abre un issue en \u003ca href=\"{github}\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.","footerHome":"Inicio","footerGithub":"GitHub","footerSite":"Sitio web","footerEmail":"Correo","index":{"navFeatures":"Funciones","navPlans":"Gratis y Premium","navPrivacy":"Privacidad","navSupport":"Apoyo","eyebrow":"Extensión para Chrome y Edge","badgeFree":"Gratis + Premium","badgeLocal":"Se ejecuta en local","badgeNoTrack":"Sin rastreo","badgeBrowsers":"Chrome y Edge","ctaGet":"Obtener la extensión","ctaPrivacy":"Política de privacidad","ctaSource":"Ver el código","featuresTitle":"Todo lo que hace","featuresLead":"Las funciones principales de un vistazo.","moreTitle":"También incluye","proLabel":"Premium","freeLabel":"Gratis","premiumLabel":"Premium","planTitle":"Gratis vs Premium","planLead":"La versión gratuita es una herramienta completa, no una prueba. Premium es opcional.","privacyTitle":"Privacidad por diseño","privacyLead":"Tus datos se quedan en tu dispositivo. Sin cuenta, sin analíticas y sin rastreo. Consulta qué se guarda y cuándo usa la red la extensión.","privacyPoints":["Procesamiento local","Sin cuenta","Licencia opcional"],"privacyCta":"Leer la política de privacidad","supportEyebrow":"Apoya al desarrollador","supportHint":"Si la extensión te resulta útil, invítame a un café.","footerMore":"Más extensiones","footerPrivacy":"Privacidad","footerGithub":"GitHub","footerSite":"Sitio web"}},"fr":{"privacyTitle":"Politique de confidentialité","home":"Accueil","onThisPage":"Sur cette page","lastUpdated":"Dernière mise à jour : octobre 2026","chips":["Fonctionne sur votre appareil","Aucune analyse","Sans compte","Licence facultative"],"permissionsTitle":"Autorisations","permissionsIntro":"L'extension ne demande que ces autorisations :","retentionTitle":"Conservation et suppression des données","retentionBody":"Vos réglages et contenus restent dans le navigateur jusqu'à ce que vous les supprimiez dans l'extension ou que vous la désinstalliez. La désinstallation efface les données locales de l'extension. Rien n'est conservé sur nos serveurs, car vos contenus ne leur sont jamais envoyés.","syncCaveat":"Si vous avez activé une fonction qui utilise la synchronisation du compte de votre navigateur, une copie peut subsister dans ce compte. Vous pouvez la gérer ou la supprimer dans les réglages de synchronisation du navigateur.","changesTitle":"Modifications de cette politique","changesBody":"Si cette politique change, la version révisée sera publiée sur cette page avec une nouvelle date. Les changements importants seront signalés dans les notes de version de l'extension.","contactTitle":"Contact","contactBody":"Des questions sur cette politique ? Écrivez à \u003ca href=\"mailto:support@annmax1983.com\"\u003esupport@annmax1983.com\u003c/a\u003e ou ouvrez un ticket sur \u003ca href=\"{github}\" target=\"_blank\" rel=\"noopener\"\u003eGitHub\u003c/a\u003e.","footerHome":"Accueil","footerGithub":"GitHub","footerSite":"Site web","footerEmail":"E-mail","index":{"navFeatures":"Fonctionnalités","navPlans":"Gratuit et Premium","navPrivacy":"Confidentialité","navSupport":"Soutien","eyebrow":"Extension Chrome et Edge","badgeFree":"Gratuit + Premium","badgeLocal":"Fonctionne en local","badgeNoTrack":"Aucun suivi","badgeBrowsers":"Chrome et Edge","ctaGet":"Obtenir l’extension","ctaPrivacy":"Politique de confidentialité","ctaSource":"Voir le code","featuresTitle":"Toutes les fonctionnalités","featuresLead":"Les fonctions essentielles en un coup d'œil.","moreTitle":"Également inclus","proLabel":"Premium","freeLabel":"Gratuit","premiumLabel":"Premium","planTitle":"Gratuit vs Premium","planLead":"La version gratuite est un outil complet, pas une version d'essai. Premium est facultatif.","privacyTitle":"Confidentiel par conception","privacyLead":"Vos données restent sur votre appareil. Sans compte, sans analyse, sans suivi. Découvrez ce qui est stocké et quand l'extension utilise le réseau.","privacyPoints":["Traitement local","Sans compte","Licence facultative"],"privacyCta":"Lire la politique de confidentialité","supportEyebrow":"Soutenir le développeur","supportHint":"Si l'extension vous aide, offrez-moi un café.","footerMore":"Plus d'extensions","footerPrivacy":"Confidentialité","footerGithub":"GitHub","footerSite":"Site web"}}};
+const CONFIG = {"name":"FontFixer","github":"https://github.com/annmax1983/FontFixer","icon":"icons/icon128.png","site":"https://annmax1983.com/extensions/fontfixer"};
+const LANG_KEY = "vkt-fontfixer-lang";
+(function () {
+  "use strict";
+
+  var select = document.getElementById("p-lang");
+  var observer = null;
+  var ui = function (lang) { return UI_ALL[lang] || UI_ALL.en; };
+
+  function esc(value) {
+    return String(value == null ? "" : value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
-};
 
-function detectLang() {
-  const raw = (navigator.language || 'en');
-  const map = { 'zh-TW': 'zh-CN', 'zh-Hans': 'zh-CN' };
-  const mapped = map[raw] || raw;
-  const base = mapped.split('-')[0].toLowerCase();
-  if (I18N[mapped]) return mapped;
-  return I18N[base] ? base : 'en';
-}
+  function setText(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = value == null ? "" : value;
+  }
 
-function apply(t) {
-  document.title = t.title.replace(/🔒\s*/, '') + ' - FontFixer';
-  document.getElementById('title').textContent = t.title;
-  document.getElementById('updated').textContent = t.updated;
-  document.getElementById('highlight').innerHTML = t.highlight;
-  document.getElementById('h1').textContent = t.h1;
-  document.getElementById('p1').innerHTML = t.p1;
-  document.getElementById('l1').innerHTML = t.l1.map(i => '<li>' + i + '</li>').join('');
-  document.getElementById('h2').textContent = t.h2;
-  document.getElementById('p2').innerHTML = t.p2;
-  document.getElementById('l2').innerHTML = t.l2.map(i => '<li>' + i + '</li>').join('');
-  document.getElementById('p2note').innerHTML = t.p2note;
-  document.getElementById('h3').textContent = t.h3;
-  document.getElementById('p3').innerHTML = t.p3;
-  document.getElementById('h4').textContent = t.h4;
-  document.getElementById('p4').innerHTML = t.p4;
-  document.getElementById('h5').textContent = t.h5;
-  document.getElementById('p5').innerHTML = t.p5;
-  document.getElementById('h6').textContent = t.h6;
-  document.getElementById('p6').innerHTML = t.p6;
-  document.getElementById('rights').textContent = t.rights;
-  document.getElementById('gh').textContent = t.gh;
-  document.documentElement.lang = detectLang();
-}
+  function detect() {
+    var codes = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+    for (var i = 0; i < codes.length; i++) {
+      var code = String(codes[i] || "").toLowerCase();
+      if (code.indexOf("zh") === 0) return "zh";
+      if (code.indexOf("ja") === 0) return "ja";
+      if (code.indexOf("de") === 0) return "de";
+      if (code.indexOf("es") === 0) return "es";
+      if (code.indexOf("fr") === 0) return "fr";
+      if (code.indexOf("en") === 0) return "en";
+    }
+    return "en";
+  }
 
-apply(I18N[detectLang()]);
+  function initToc() {
+    if (observer) observer.disconnect();
+    var links = Array.prototype.slice.call(document.querySelectorAll("#p-toc a"));
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".policy-card"));
+    if (!links.length || !cards.length || typeof IntersectionObserver === "undefined") return;
+
+    function activate(id) {
+      links.forEach(function (link) {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+      });
+    }
+
+    observer = new IntersectionObserver(function (entries) {
+      var visible = entries.filter(function (entry) { return entry.isIntersecting; });
+      if (visible.length) activate(visible[0].target.id);
+    }, { rootMargin: "-18% 0px -68% 0px", threshold: [0, 1] });
+
+    cards.forEach(function (card) { observer.observe(card); });
+    if (links[0]) links[0].classList.add("active");
+  }
+
+  function render(lang) {
+    var data = MODEL.langs[lang];
+    if (!data) return;
+    var u = ui(lang);
+
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+    document.title = CONFIG.name + " — " + u.privacyTitle;
+
+    setText("p-home", u.home);
+    setText("p-eyebrow", u.privacyTitle);
+    setText("p-h1", CONFIG.name);
+    setText("p-h1-sub", u.privacyTitle);
+    setText("p-updated", u.lastUpdated);
+    setText("p-toc-title", u.onThisPage);
+
+    var summary = document.getElementById("p-summary");
+    if (summary) summary.innerHTML = data.summary || "";
+
+    var chips = document.getElementById("p-chips");
+    if (chips) {
+      chips.innerHTML = u.chips.map(function (chip) {
+        return '<span class="chip">' + esc(chip) + "</span>";
+      }).join("");
+    }
+
+    setText("p-footer-home", u.footerHome);
+    setText("p-footer-privacy", u.privacyTitle);
+    setText("p-footer-github", u.footerGithub);
+    setText("p-footer-site", u.footerSite);
+    setText("p-footer-email", u.footerEmail || "Email");
+
+    var toc = document.getElementById("p-toc");
+    var sections = document.getElementById("p-sections");
+    if (!toc || !sections) return;
+    toc.innerHTML = "";
+    sections.innerHTML = "";
+
+    data.sections.forEach(function (section, index) {
+      var number = String(index + 1).padStart(2, "0");
+      var id = "section-" + (index + 1);
+
+      var link = document.createElement("a");
+      link.href = "#" + id;
+      link.innerHTML = "<span>" + number + "</span>" + esc(section.t);
+      toc.appendChild(link);
+
+      var card = document.createElement("article");
+      card.className = "policy-card";
+      card.id = id;
+      card.innerHTML = '<h2><span class="policy-num">' + number + "</span>" + esc(section.t) + '</h2><div class="policy-body">' + section.html + "</div>";
+      sections.appendChild(card);
+    });
+
+    initToc();
+  }
+
+  function storedLang() {
+    try { return localStorage.getItem(LANG_KEY); } catch (error) { return null; }
+  }
+
+  function remember(lang) {
+    try { localStorage.setItem(LANG_KEY, lang); } catch (error) { /* storage can be blocked */ }
+  }
+
+  initToc();
+
+  if (select) {
+    var saved = storedLang();
+    var initial = saved && MODEL.langs[saved] ? saved : detect();
+    if (!MODEL.langs[initial]) initial = "en";
+    select.value = initial;
+    if (initial !== "en") render(initial);
+    select.addEventListener("change", function () {
+      remember(select.value);
+      render(select.value);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
 </script>
 </body>
 </html>
