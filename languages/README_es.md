@@ -49,7 +49,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 ## Vista previa
 
 <p align="center">
-  <img src="icons/icon128.png" alt="Icono de FontFixer" width="80">
+  <img src="../icons/icon128.png" alt="Icono de FontFixer" width="80">
 </p>
 
 ---
@@ -66,12 +66,12 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 
 ## Instalación
 
-1. Abre la página de extensiones de tu navegador:
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. Activa el **modo de desarrollador** (interruptor arriba a la derecha)
-3. Haz clic en **Cargar descomprimida** y selecciona la carpeta `font-fixer`
-4. Haz clic en el icono 🔤 de FontFixer en tu barra de herramientas para empezar
+| Tienda | Enlace |
+|---|---|
+| Chrome Web Store | [Instalar en Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
+| Complementos de Microsoft Edge | [Instalar en Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+
+> Instale solo desde las tiendas oficiales de arriba; evite sitios de descarga de terceros.
 
 ---
 
@@ -98,19 +98,10 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 
 ## Cómo funciona
 
-```
-Seleccionar fuente y ajustar configuración
-       ↓
-Clic en Aplicar y guardar
-       ↓
-CSS inyectado vía chrome.scripting.insertCSS
-       ↓
-Las fuentes de la página cambian al instante
-       ↓
-Configuración guardada en chrome.storage.local
-       ↓
-(Aplicación automática activada) se vuelve a aplicar automáticamente en tu próxima visita
-```
+1. Elige una fuente y ajusta el tamaño y los colores en el popup.
+2. Haz clic en **Aplicar y guardar** — la página cambia de estilo al instante, sin recargar.
+3. Tu configuración se guarda en tu navegador, un conjunto por sitio.
+4. Con **Aplicación automática** activado, la configuración de ese sitio se vuelve a aplicar cada vez que lo visites.
 
 Todo el procesamiento de estilos ocurre localmente en tu navegador. La única solicitud de red es **opcional** — cuando activas una clave de licencia Pro, FontFixer contacta con el servidor de licencias con tu clave y metadatos básicos del navegador (navegador, idioma, zona horaria). Nunca se lee ni sube contenido de páginas web.
 

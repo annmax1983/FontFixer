@@ -66,12 +66,12 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 
 ## Installation
 
-1. Open your browser's extension page:
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. Enable **Developer mode** (top-right toggle)
-3. Click **Load unpacked** and select the `font-fixer` folder
-4. Click the 🔤 FontFixer icon in your toolbar to start
+| Store | Link |
+|---|---|
+| Chrome Web Store | [Install for Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
+| Microsoft Edge Add-ons | [Install for Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+
+> Install only from the official stores above — avoid third-party download sites.
 
 ---
 
@@ -98,19 +98,10 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 
 ## How It Works
 
-```
-Select font & adjust settings
-       ↓
-Click Apply & Save
-       ↓
-CSS injected via chrome.scripting.insertCSS
-       ↓
-Page fonts change instantly
-       ↓
-Settings saved to chrome.storage.local
-       ↓
-(Auto Apply on) re-applied automatically on your next visit
-```
+1. Pick a font, then tune size and colours in the popup.
+2. Click **Apply & Save** — the page restyles straight away, no reload.
+3. Your settings are stored in your browser, one set per site.
+4. With **Auto Apply** on, that site's settings are re-applied every time you visit it.
 
 All style processing happens locally in your browser. The only network request is **optional** — when you activate a Pro license key, FontFixer contacts the license server with your key and basic browser metadata (browser, language, timezone). No webpage content is ever read or uploaded.
 
@@ -159,4 +150,4 @@ If you find FontFixer helpful, consider supporting the project!
 
 ---
 
-> **Note:** This repository is for **project showcase purposes only**. It does not contain the full source code, manifest, icons, or build scripts. Full source code will **not** be published here.
+> **Note:** This repository is a project showcase. The full source code is not published here.

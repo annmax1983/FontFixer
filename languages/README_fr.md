@@ -49,7 +49,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 ## Aperçu
 
 <p align="center">
-  <img src="icons/icon128.png" alt="Icône FontFixer" width="80">
+  <img src="../icons/icon128.png" alt="Icône FontFixer" width="80">
 </p>
 
 ---
@@ -66,12 +66,12 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 
 ## Installation
 
-1. Ouvrez la page des extensions de votre navigateur :
-   - **Chrome** : `chrome://extensions/`
-   - **Edge** : `edge://extensions/`
-2. Activez le **mode Développeur** (bouton en haut à droite)
-3. Cliquez sur **Charger le package décompressé** et sélectionnez le dossier `font-fixer`
-4. Cliquez sur l'icône 🔤 FontFixer dans votre barre d'outils pour commencer
+| Store | Lien |
+|---|---|
+| Chrome Web Store | [Installer dans Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
+| Microsoft Edge Add-ons | [Installer dans Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+
+> Installez uniquement depuis les boutiques officielles ci-dessus — évitez les sites de téléchargement tiers.
 
 ---
 
@@ -98,19 +98,10 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 
 ## Fonctionnement
 
-```
-Sélection de la police et ajustement des paramètres
-       ↓
-Clic sur Appliquer et enregistrer
-       ↓
-CSS injecté via chrome.scripting.insertCSS
-       ↓
-Les polices de la page changent instantanément
-       ↓
-Paramètres sauvegardés dans chrome.storage.local
-       ↓
-(Application automatique activée) réappliqués automatiquement lors de votre prochaine visite
-```
+1. Choisissez une police, puis ajustez la taille et les couleurs dans le popup.
+2. Cliquez sur **Appliquer et enregistrer** — la page change de style immédiatement, sans rechargement.
+3. Vos réglages sont conservés dans votre navigateur, un jeu par site.
+4. Une fois **Application automatique** activée, les réglages de ce site sont réappliqués à chaque visite.
 
 Tout le traitement des styles se fait en local dans votre navigateur. La seule requête réseau est **optionnelle** — quand vous activez une clé de licence Pro, FontFixer contacte le serveur de licences avec votre clé et des métadonnées basiques du navigateur (navigateur, langue, fuseau horaire). Aucun contenu de page web n'est lu ou envoyé.
 

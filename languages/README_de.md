@@ -49,7 +49,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 ## Vorschau
 
 <p align="center">
-  <img src="icons/icon128.png" alt="FontFixer Symbol" width="80">
+  <img src="../icons/icon128.png" alt="FontFixer Symbol" width="80">
 </p>
 
 ---
@@ -66,12 +66,12 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 
 ## Installation
 
-1. Öffne die Erweiterungsseite deines Browsers:
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. Aktiviere den **Entwicklermodus** (Schalter oben rechts)
-3. Klicke auf **Entpackte Erweiterung laden** und wähle den Ordner `font-fixer`
-4. Klicke auf das 🔤 FontFixer-Symbol in deiner Toolbar zum Starten
+| Store | Link |
+|---|---|
+| Chrome Web Store | [In Chrome installieren](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
+| Microsoft Edge Add-ons | [In Edge installieren](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+
+> Installieren Sie nur über die offiziellen Stores oben – meiden Sie Download-Seiten Dritter.
 
 ---
 
@@ -98,19 +98,10 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 
 ## So funktioniert es
 
-```
-Schrift auswählen & Einstellungen anpassen
-       ↓
-Auf Anwenden & Speichern klicken
-       ↓
-CSS wird via chrome.scripting.insertCSS injiziert
-       ↓
-Seitenschriften ändern sich sofort
-       ↓
-Einstellungen in chrome.storage.local gespeichert
-       ↓
-(Auto-Anwenden an) wird beim nächsten Besuch automatisch wieder angewendet
-```
+1. Wähle im Popup eine Schrift und passe Größe und Farben an.
+2. Klicke auf **Anwenden & Speichern** — die Seite ändert ihr Aussehen sofort, ohne Neuladen.
+3. Deine Einstellungen werden in deinem Browser gespeichert — ein Satz pro Website.
+4. Ist **Auto-Anwenden** aktiviert, werden die Einstellungen dieser Seite bei jedem Besuch automatisch wieder angewendet.
 
 Alle Style-Verarbeitung passiert lokal in deinem Browser. Die einzige Netzwerkanfrage ist **optional** — bei Aktivierung eines Pro-Lizenzschlüssels kontaktiert FontFixer den Lizenzserver mit deinem Schlüssel und grundlegenden Browser-Metadaten (Browser, Sprache, Zeitzone). Es werden nie Webseiteninhalte gelesen oder hochgeladen.
 

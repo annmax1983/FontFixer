@@ -49,7 +49,7 @@
 ## プレビュー
 
 <p align="center">
-  <img src="icons/icon128.png" alt="FontFixer Icon" width="80">
+  <img src="../icons/icon128.png" alt="FontFixer Icon" width="80">
 </p>
 
 ---
@@ -66,12 +66,12 @@
 
 ## インストール
 
-1. ブラウザの拡張機能ページを開きます：
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. **デベロッパーモード**を有効にします（右上のトグル）
-3. **パッケージ化されていない拡張機能を読み込む**をクリックし、`font-fixer`フォルダを選択します
-4. ツールバーの🔤 FontFixerアイコンをクリックして開始します
+| ストア | リンク |
+|---|---|
+| Chrome ウェブストア | [Chrome に追加](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
+| Microsoft Edge アドオン | [Edge に追加](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+
+> 上記の公式ストアからのみインストールしてください。第三者サイトの利用は避けてください。
 
 ---
 
@@ -98,19 +98,10 @@
 
 ## 動作の仕組み
 
-```
-フォントを選択＆設定を調整
-       ↓
-適用して保存をクリック
-       ↓
-chrome.scripting.insertCSSでCSSを注入
-       ↓
-ページのフォントが即座に変更
-       ↓
-chrome.storage.localに設定を保存
-       ↓
-（自動適用ON）次回訪問時に自動再適用
-```
+1. ポップアップでフォントを選択し、サイズと色を調整します。
+2. **適用して保存**をクリック — ページのスタイルが即座に変わり、再読み込みは不要です。
+3. 設定はブラウザに保存されます。サイトごとに別の設定を保持できます。
+4. **自動適用**をONにすると、そのサイトに訪問するたびに保存済みの設定が自動的に再適用されます。
 
 すべてのスタイル処理はブラウザ内でローカルに実行されます。唯一のネットワークリクエストは**オプション**のものです — Proライセンスキーを有効化する際、FontFixerがライセンスサーバーにキーと基本的なブラウザメタデータ（ブラウザ、言語、タイムゾーン）を送信します。Webページのコンテンツが読み取られたりアップロードされたりすることはありません。
 
