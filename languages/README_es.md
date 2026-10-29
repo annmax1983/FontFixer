@@ -4,7 +4,7 @@
 
 Una extensión ligera para el navegador que optimiza las fuentes de las páginas web para una lectura más cómoda. Cambia la familia tipográfica, el tamaño y los colores del texto con un solo clic.
 
-> Basada en Chromium · Manifest V3 · Permisos mínimos · Sin rastreo
+> Chrome / Edge / Firefox · Manifest V3 · Permisos mínimos · Sin rastreo
 
 ---
 
@@ -14,7 +14,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 
 | Ventaja | Detalle |
 |---------|--------|
-| 🔤 **Soporte de fuentes locales** | Lee las fuentes instaladas en tu dispositivo mediante la API `queryLocalFonts` |
+| 🔤 **Soporte de fuentes locales** | Lee las fuentes instaladas en tu dispositivo mediante la API `queryLocalFonts` (solo Chrome / Edge; Firefox no expone esta API) |
 | ⚡ **Vista previa en tiempo real** | Todos los cambios se aplican al instante mientras ajustas — sin recargar la página |
 | 💾 **Memoria por sitio** | Guarda configuraciones de fuente diferentes para distintos sitios web |
 | ⚙️ **Aplicación automática** | Vuelve a aplicar la configuración guardada automáticamente cada vez que visitas un sitio configurado |
@@ -60,7 +60,10 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 |---------|--------|
 | Google Chrome | ✅ Totalmente compatible |
 | Microsoft Edge | ✅ Totalmente compatible |
+| Mozilla Firefox | ✅ Totalmente compatible |
 | Otros navegadores basados en Chromium | ✅ Debería funcionar |
+
+> **Nota sobre Firefox:** Firefox no ofrece `queryLocalFonts`, así que la lista de fuentes locales no está disponible y solo quedan las fuentes integradas. El resto de funciones se comporta igual que en Chrome / Edge. En la versión de Firefox, las dos fuentes web integradas (Noto Sans, Source Han Sans) se descargan del CDN de jsDelivr la primera vez que las eliges; el resto del procesamiento es local.
 
 ---
 
@@ -70,6 +73,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 |---|---|
 | Chrome Web Store | [Instalar en Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Complementos de Microsoft Edge | [Instalar en Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+| Complementos de Firefox (AMO) | 🔜 En revisión: el enlace se añadirá al publicarse |
 
 > Instale solo desde las tiendas oficiales de arriba; evite sitios de descarga de terceros.
 
@@ -103,7 +107,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 3. Tu configuración se guarda en tu navegador, un conjunto por sitio.
 4. Con **Aplicación automática** activado, la configuración de ese sitio se vuelve a aplicar cada vez que lo visites.
 
-Todo el procesamiento de estilos ocurre localmente en tu navegador. La única solicitud de red es **opcional** — cuando activas una clave de licencia Pro, FontFixer contacta con el servidor de licencias con tu clave y metadatos básicos del navegador (navegador, idioma, zona horaria). Nunca se lee ni sube contenido de páginas web.
+Todo el procesamiento de estilos ocurre localmente en tu navegador. La única solicitud de red es **opcional** — cuando activas una clave de licencia Pro, FontFixer contacta con el servidor de licencias con tu clave y metadatos básicos del navegador (navegador, idioma, zona horaria). Nunca se lee ni sube contenido de páginas web. En la versión de Firefox, las dos fuentes web integradas (Noto Sans, Source Han Sans) se descargan del CDN de jsDelivr la primera vez que las eliges.
 
 **Nota sobre el acceso a fuentes locales:** Las fuentes locales usan la Local Font Access API — no se necesita permiso en el manifest. Chrome muestra un aviso de permiso en tiempo de ejecución, y la API solo se ejecuta durante un clic del usuario, así que abre el popup y haz clic en el **botón de actualización 🔄** para cargar tus fuentes locales. Solo se leen los nombres de visualización de las fuentes — los archivos fuente de las fuentes no se extraen, copian ni suben. Puedes revocar el permiso en los ajustes del navegador en cualquier momento.
 
@@ -125,8 +129,8 @@ La extensión solo lee la lista de nombres de las fuentes instaladas en tu dispo
 - `scripting` — Inyecta CSS para cambiar las fuentes de la página. No lee texto ni datos de la página.
 - `activeTab` — Solo accede a la pestaña actual cuando interactúas con la extensión.
 - `<all_urls>` — Permite a la extensión volver a aplicar tus estilos de fuente guardados automáticamente en los sitios que hayas configurado. Nunca lee ni sube contenido de páginas.
-- **Acceso a fuentes locales** — Sin permiso en el manifest; el acceso se concede en tiempo de ejecución mediante un aviso del navegador. Lee solo nombres de visualización, nunca archivos de fuente. Se puede revocar en cualquier momento.
-- Sin rastreo, sin analíticas. La única solicitud de red es la activación/validación de licencia cuando usas una clave de licencia Pro.
+- **Acceso a fuentes locales** — Solo Chrome / Edge. Sin permiso en el manifest; el acceso se concede en tiempo de ejecución mediante un aviso del navegador. Lee solo nombres de visualización, nunca archivos de fuente. Se puede revocar en cualquier momento. Firefox no ofrece esta API, así que allí no se solicita nada.
+- Sin rastreo, sin analíticas. Solo hay dos solicitudes de red: la activación/validación de licencia cuando usas una clave Pro y, únicamente en Firefox, la descarga de las dos fuentes web desde el CDN de jsDelivr la primera vez.
 
 ---
 

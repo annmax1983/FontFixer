@@ -4,7 +4,7 @@
 
 Eine schlanke Browser-Erweiterung, die Webseiten-Schriften für komfortables Lesen optimiert. Schriftart, Größe und Textfarben mit einem Klick ändern.
 
-> Chromium-basiert · Manifest V3 · Minimale Berechtigungen · Kein Tracking
+> Chrome / Edge / Firefox · Manifest V3 · Minimale Berechtigungen · Kein Tracking
 
 ---
 
@@ -14,7 +14,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 
 | Vorteil | Details |
 |---------|---------|
-| 🔤 **Lokale Schriften** | Liest auf deinem Gerät installierte Schriften über die `queryLocalFonts` API |
+| 🔤 **Lokale Schriften** | Liest auf deinem Gerät installierte Schriften über die `queryLocalFonts` API (nur Chrome / Edge; Firefox bietet diese API nicht an) |
 | ⚡ **Echtzeit-Vorschau** | Alle Änderungen werden sofort beim Anpassen angewendet — kein Seiten-Neuladen |
 | 💾 **Speicher pro Seite** | Speichert verschiedene Schrifteinstellungen für verschiedene Websites |
 | ⚙️ **Auto-Anwenden** | Gespeicherte Einstellungen werden bei jedem Besuch einer konfigurierten Seite automatisch wieder angewendet |
@@ -60,7 +60,10 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 |---------|--------|
 | Google Chrome | ✅ Vollständig unterstützt |
 | Microsoft Edge | ✅ Vollständig unterstützt |
+| Mozilla Firefox | ✅ Vollständig unterstützt |
 | Andere Chromium-basierte Browser | ✅ Sollte funktionieren |
+
+> **Firefox-Hinweis:** Firefox kennt kein `queryLocalFonts`, daher steht die Liste lokaler Schriften nicht zur Verfügung und es bleiben nur die integrierten Schriften. Die übrigen Funktionen verhalten sich wie unter Chrome / Edge. In der Firefox-Version werden die beiden integrierten Webfonts (Noto Sans, Source Han Sans) beim ersten Auswählen vom jsDelivr-CDN geladen; die gesamte Verarbeitung bleibt lokal.
 
 ---
 
@@ -70,6 +73,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 |---|---|
 | Chrome Web Store | [In Chrome installieren](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge Add-ons | [In Edge installieren](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+| Firefox-Add-ons (AMO) | 🔜 In Prüfung – Link folgt nach der Freigabe |
 
 > Installieren Sie nur über die offiziellen Stores oben – meiden Sie Download-Seiten Dritter.
 
@@ -103,7 +107,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 3. Deine Einstellungen werden in deinem Browser gespeichert — ein Satz pro Website.
 4. Ist **Auto-Anwenden** aktiviert, werden die Einstellungen dieser Seite bei jedem Besuch automatisch wieder angewendet.
 
-Alle Style-Verarbeitung passiert lokal in deinem Browser. Die einzige Netzwerkanfrage ist **optional** — bei Aktivierung eines Pro-Lizenzschlüssels kontaktiert FontFixer den Lizenzserver mit deinem Schlüssel und grundlegenden Browser-Metadaten (Browser, Sprache, Zeitzone). Es werden nie Webseiteninhalte gelesen oder hochgeladen.
+Alle Style-Verarbeitung passiert lokal in deinem Browser. Die einzige Netzwerkanfrage ist **optional** — bei Aktivierung eines Pro-Lizenzschlüssels kontaktiert FontFixer den Lizenzserver mit deinem Schlüssel und grundlegenden Browser-Metadaten (Browser, Sprache, Zeitzone). Es werden nie Webseiteninhalte gelesen oder hochgeladen. In der Firefox-Version werden zudem die beiden integrierten Webfonts (Noto Sans, Source Han Sans) beim ersten Auswählen vom jsDelivr-CDN geladen.
 
 **Hinweis zum lokalen Schriftzugriff:** Lokale Schriften verwenden die Local Font Access API — keine Manifest-Berechtigung nötig. Chrome zeigt eine Berechtigungsabfrage zur Laufzeit an, und die API läuft nur bei einem Nutzerklick, also öffne das Popup und klicke auf den **🔄 Aktualisieren-Button**, um deine lokalen Schriften zu laden. Es werden nur Schriftnamen gelesen — Quelldateien werden nicht extrahiert, kopiert oder hochgeladen. Du kannst die Berechtigung jederzeit in den Browsereinstellungen widerrufen.
 
@@ -125,8 +129,8 @@ Die Erweiterung liest nur die Namensliste der auf deinem lokalen Gerät installi
 - `scripting` — Injiziert CSS zur Änderung der Seitenschriften. Liest keinen Seitentext oder Daten.
 - `activeTab` — Greift nur auf den aktuellen Tab zu, wenn du mit der Erweiterung interagierst.
 - `<all_urls>` — Ermöglicht der Erweiterung, gespeicherte Schrift-Styles automatisch auf konfigurierten Seiten wieder anzuwenden. Es werden nie Seiteninhalte gelesen oder hochgeladen.
-- **Lokaler Schriftzugriff** — Keine Manifest-Berechtigung; Zugriff wird zur Laufzeit über eine Browser-Abfrage gewährt. Liest nur Anzeigenamen, nie Schriftdateien. Kann jederzeit widerrufen werden.
-- Kein Tracking, keine Analytik. Die einzige Netzwerkanfrage ist die Lizenzaktivierung/-validierung bei Verwendung eines Pro-Lizenzschlüssels.
+- **Lokaler Schriftzugriff** — Nur Chrome / Edge. Keine Manifest-Berechtigung; Zugriff wird zur Laufzeit über eine Browser-Abfrage gewährt. Liest nur Anzeigenamen, nie Schriftdateien. Kann jederzeit widerrufen werden. Firefox bietet diese API nicht an, dort wird nichts angefordert.
+- Kein Tracking, keine Analytik. Es gibt nur zwei Netzwerkanfragen: die Lizenzaktivierung/-validierung bei Verwendung eines Pro-Lizenzschlüssels und – nur in der Firefox-Version – das einmalige Laden der beiden Webfonts vom jsDelivr-CDN.
 
 ---
 

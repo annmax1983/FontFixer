@@ -3,7 +3,7 @@
 
 一款轻量级浏览器扩展，优化网页字体以获得舒适阅读体验。一键更换字体、调整字号和文字颜色。
 
-> 基于 Chromium · Manifest V3 · 最小权限 · 无追踪
+> Chrome / Edge / Firefox · Manifest V3 · 最小权限 · 无追踪
 
 ---
 
@@ -13,7 +13,7 @@
 
 | 功能 | 说明 |
 |------|------|
-| 🔤 **字体选择** | 3 种内置字体（Noto Sans、Source Han Sans、Arial）或设备上安装的任意字体 |
+| 🔤 **字体选择** | 3 种内置字体（Noto Sans、Source Han Sans、Arial）或（仅 Chrome / Edge）设备上安装的任意字体 |
 | 📏 **字号缩放** | 50% 至 500% 滑动调节 |
 | 🎨 **文字颜色** | 取色器自定义文字颜色 |
 | 🔗 **链接颜色** | 单独设置链接颜色，提升可读性 |
@@ -31,12 +31,26 @@
 
 ---
 
+## 支持的浏览器
+
+| 浏览器 | 状态 |
+|--------|------|
+| Google Chrome | ✅ 完全支持 |
+| Microsoft Edge | ✅ 完全支持 |
+| Mozilla Firefox | ✅ 完全支持 |
+| 其他 Chromium 内核浏览器 | ✅ 应该可用 |
+
+> **Firefox 说明：** Firefox 不提供 `queryLocalFonts`，无法读取本地字体列表，只能使用内置字体。其余功能与 Chrome / Edge 一致。Firefox 版的两款内置网页字体（Noto Sans、思源黑体）会在首次使用时从 jsDelivr CDN 下载，其余处理全部在本地完成。
+
+---
+
 ## 安装
 
 | 商店 | 链接 |
 |---|---|
 | Chrome 应用商店 | [在 Chrome 中安装](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge 加载项 | [在 Edge 中安装](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+| Firefox 附加组件（AMO） | 🔜 审核中，上架后补充链接 |
 
 > 请只通过上方官方商店安装，避免使用第三方下载站。
 
@@ -63,14 +77,14 @@
 - `scripting` — 注入 CSS 更改页面字体，不读取页面文本或数据
 - `activeTab` — 仅在您与扩展交互时访问当前标签页
 - `<all_urls>` — 用于在您已配置的网站上自动重放已保存的字体样式。它从不读取或上传网页内容。
-- **本地字体访问** — 无需清单权限；通过浏览器运行时提示授权。仅读取字体显示名称，从不读取字体文件，可随时撤销。
-- 无追踪、无分析。唯一的网络请求是使用 Pro 授权密钥时的授权激活/验证。
+- **本地字体访问** — 仅 Chrome / Edge。无需清单权限；通过浏览器运行时提示授权。仅读取字体显示名称，从不读取字体文件，可随时撤销。Firefox 不提供该 API，因此不申请任何相关权限。
+- 无追踪、无分析。网络请求只有两处：使用 Pro 授权密钥时的授权激活/验证，以及 Firefox 版首次使用内置网页字体时从 jsDelivr 下载字体文件。
 
 ---
 
 ## 源码说明
 
-> ⚠️ **此处不发布源码。** 本仓库仅提供使用说明、更新日志和留言支持服务。扩展程序仅通过 Chrome Web Store 分发，不提供离线安装包或终端用户源代码。
+> ⚠️ **此处不发布源码。** 本仓库仅提供使用说明、更新日志和留言支持服务。扩展程序仅通过 Chrome Web Store、Microsoft Edge Add-ons 与 Firefox 附加组件（AMO） 分发，不提供离线安装包或终端用户源代码。
 
 ---
 

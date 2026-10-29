@@ -4,7 +4,7 @@
 
 Une extension légère qui optimise les polices des pages web pour une lecture confortable. Changez la famille de police, la taille et les couleurs du texte en un clic.
 
-> Chromium · Manifest V3 · Permissions minimales · Aucun suivi
+> Chrome / Edge / Firefox · Manifest V3 · Permissions minimales · Aucun suivi
 
 ---
 
@@ -14,7 +14,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 
 | Avantage | Détail |
 |-----------|--------|
-| 🔤 **Support des polices locales** | Lit les polices installées sur votre appareil via l'API `queryLocalFonts` |
+| 🔤 **Support des polices locales** | Lit les polices installées sur votre appareil via l'API `queryLocalFonts` (uniquement Chrome / Edge ; Firefox n’expose pas cette API) |
 | ⚡ **Prévisualisation en temps réel** | Toutes les modifications s'appliquent instantanément pendant que vous ajustez — aucun rechargement |
 | 💾 **Mémoire par site** | Sauvegarde des réglages de police différents pour différents sites web |
 | ⚙️ **Application automatique** | Réapplique les réglages sauvegardés automatiquement à chaque visite sur un site configuré |
@@ -60,7 +60,10 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 |---------|--------|
 | Google Chrome | ✅ Entièrement pris en charge |
 | Microsoft Edge | ✅ Entièrement pris en charge |
+| Mozilla Firefox | ✅ Entièrement pris en charge |
 | Autres navigateurs basés sur Chromium | ✅ Devrait fonctionner |
+
+> **Note Firefox :** Firefox ne fournit pas `queryLocalFonts` : la liste des polices locales est indisponible et seules les polices intégrées restent utilisables. Le reste des fonctions se comporte comme sous Chrome / Edge. Dans la version Firefox, les deux polices web intégrées (Noto Sans, Source Han Sans) sont téléchargées depuis le CDN jsDelivr lors de la première sélection ; le reste du traitement reste local.
 
 ---
 
@@ -70,6 +73,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 |---|---|
 | Chrome Web Store | [Installer dans Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge Add-ons | [Installer dans Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
+| Modules complémentaires Firefox (AMO) | 🔜 En cours d’examen — le lien sera ajouté après publication |
 
 > Installez uniquement depuis les boutiques officielles ci-dessus — évitez les sites de téléchargement tiers.
 
@@ -103,7 +107,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 3. Vos réglages sont conservés dans votre navigateur, un jeu par site.
 4. Une fois **Application automatique** activée, les réglages de ce site sont réappliqués à chaque visite.
 
-Tout le traitement des styles se fait en local dans votre navigateur. La seule requête réseau est **optionnelle** — quand vous activez une clé de licence Pro, FontFixer contacte le serveur de licences avec votre clé et des métadonnées basiques du navigateur (navigateur, langue, fuseau horaire). Aucun contenu de page web n'est lu ou envoyé.
+Tout le traitement des styles se fait en local dans votre navigateur. La seule requête réseau est **optionnelle** — quand vous activez une clé de licence Pro, FontFixer contacte le serveur de licences avec votre clé et des métadonnées basiques du navigateur (navigateur, langue, fuseau horaire). Aucun contenu de page web n'est lu ou envoyé. Dans la version Firefox, les deux polices web intégrées (Noto Sans, Source Han Sans) sont téléchargées depuis le CDN jsDelivr lors de la première sélection.
 
 **Note sur l'accès aux polices locales :** Les polices locales utilisent l'API Local Font Access — aucune permission de manifest n'est nécessaire. Chrome affiche une invite de permission à l'exécution, et l'API ne fonctionne que pendant un clic utilisateur. Ouvrez donc le popup et cliquez sur le **bouton 🔄 rafraîchir** pour charger vos polices locales. Seuls les noms d'affichage des polices sont lus — les fichiers source ne sont pas extraits, copiés ni envoyés. Vous pouvez révoquer l'autorisation à tout moment dans les paramètres du navigateur.
 
@@ -125,8 +129,8 @@ L'extension lit uniquement la liste des noms des polices installées sur votre a
 - `scripting` — Injecte du CSS pour changer les polices des pages. Ne lit pas le texte ni les données des pages.
 - `activeTab` — N'accède à l'onglet actif que lorsque vous interagissez avec l'extension.
 - `<all_urls>` — Permet à l'extension de réappliquer automatiquement vos styles de police sauvegardés sur les sites que vous avez configurés. Ne lit ni n'envoie jamais le contenu des pages.
-- **Accès aux polices locales** — Aucune permission de manifest ; l'accès est accordé à l'exécution via une invite du navigateur. Lit uniquement les noms d'affichage, jamais les fichiers de police. Peut être révoqué à tout moment.
-- Aucun suivi, aucun analytics. La seule requête réseau est l'activation/validation de la licence lorsque vous utilisez une clé de licence Pro.
+- **Accès aux polices locales** — Uniquement Chrome / Edge. Aucune permission de manifest ; l'accès est accordé à l'exécution via une invite du navigateur. Lit uniquement les noms d'affichage, jamais les fichiers de police. Peut être révoqué à tout moment. Firefox n'offre pas cette API, rien n'y est donc demandé.
+- Aucun suivi, aucun analytics. Deux requêtes réseau seulement : l’activation/validation de la licence avec une clé Pro et, sur Firefox uniquement, le téléchargement des deux polices web depuis le CDN jsDelivr à la première utilisation.
 
 ---
 
