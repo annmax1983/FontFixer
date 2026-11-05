@@ -73,7 +73,7 @@ Muchos sitios web usan fuentes pequeñas, borrosas o difíciles de leer. FontFix
 |---|---|
 | Chrome Web Store | [Instalar en Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Complementos de Microsoft Edge | [Instalar en Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
-| Complementos de Firefox (AMO) | 🔜 En revisión: el enlace se añadirá al publicarse |
+| Complementos de Firefox (AMO) | [Instalar para Firefox](https://addons.mozilla.org/firefox/addon/fontfixer/) |
 
 > Instale solo desde las tiendas oficiales de arriba; evite sitios de descarga de terceros.
 
@@ -150,4 +150,14 @@ Copyright © 2026 FontFixer. Todos los derechos reservados.
 
 Si te resulta útil FontFixer, ¡considera apoyar el proyecto!
 
-**[👉 Obtener una clave de licencia](https://www.annmax1983.com/checkout.html?plugin=fontfixer)**
+**[👉 Obtener una clave de licencia](https://annmax1983.com/checkout?plugin=fontfixer)**
+
+---
+
+## Enlaces
+
+- **Sitio oficial:** https://annmax1983.com/
+- **Esta extensión:** https://annmax1983.com/extensions/fontfixer
+- **Privacidad:** https://annmax1983.com/privacy
+- **Contacto:** support@annmax1983.com
+- **☕ Apoya el proyecto (Ko-fi):** https://ko-fi.com/annmax?ref=fontfixer

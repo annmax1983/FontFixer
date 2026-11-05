@@ -50,7 +50,7 @@
 |---|---|
 | Chrome 应用商店 | [在 Chrome 中安装](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge 加载项 | [在 Edge 中安装](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
-| Firefox 附加组件（AMO） | 🔜 审核中，上架后补充链接 |
+| Firefox 附加组件（AMO） | [安装 Firefox 版](https://addons.mozilla.org/firefox/addon/fontfixer/) |
 
 > 请只通过上方官方商店安装，避免使用第三方下载站。
 
@@ -91,3 +91,13 @@
 ## 许可证
 
 Copyright © 2026 FontFixer. 保留所有权利。
+
+---
+
+## 链接
+
+- **官方网站:** https://annmax1983.com/
+- **本插件:** https://annmax1983.com/extensions/fontfixer
+- **隐私政策:** https://annmax1983.com/privacy
+- **联系:** support@annmax1983.com
+- **☕ 支持这个项目（Ko-fi）:** https://ko-fi.com/annmax?ref=fontfixer

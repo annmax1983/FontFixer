@@ -73,7 +73,7 @@ Viele Websites verwenden kleine, unscharfe oder schwer lesbare Schriften. FontFi
 |---|---|
 | Chrome Web Store | [In Chrome installieren](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge Add-ons | [In Edge installieren](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
-| Firefox-Add-ons (AMO) | 🔜 In Prüfung – Link folgt nach der Freigabe |
+| Firefox-Add-ons (AMO) | [Für Firefox installieren](https://addons.mozilla.org/firefox/addon/fontfixer/) |
 
 > Installieren Sie nur über die offiziellen Stores oben – meiden Sie Download-Seiten Dritter.
 
@@ -150,8 +150,18 @@ Copyright © 2026 FontFixer. Alle Rechte vorbehalten.
 
 Wenn dir FontFixer hilft, unterstütze das Projekt gerne!
 
-**[👉 Lizenzschlüssel erhalten](https://www.annmax1983.com/checkout.html?plugin=fontfixer)**
+**[👉 Lizenzschlüssel erhalten](https://annmax1983.com/checkout?plugin=fontfixer)**
 
 ---
 
 > **Hinweis:** Dieses Repository dient ausschließlich der **Projektpräsentation**. Es enthält nicht den vollständigen Quellcode, das Manifest, Icons oder Build-Skripte. Der vollständige Quellcode wird hier **nicht** veröffentlicht.
+
+---
+
+## Links
+
+- **Offizielle Website:** https://annmax1983.com/
+- **Diese Erweiterung:** https://annmax1983.com/extensions/fontfixer
+- **Datenschutz:** https://annmax1983.com/privacy
+- **Kontakt:** support@annmax1983.com
+- **☕ Projekt unterstützen (Ko-fi):** https://ko-fi.com/annmax?ref=fontfixer

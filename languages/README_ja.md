@@ -73,7 +73,7 @@
 |---|---|
 | Chrome ウェブストア | [Chrome に追加](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge アドオン | [Edge に追加](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
-| Firefox アドオン（AMO） | 🔜 審査中 — 公開後にリンクを追加します |
+| Firefox アドオン（AMO） | [Firefox 版をインストール](https://addons.mozilla.org/firefox/addon/fontfixer/) |
 
 > 上記の公式ストアからのみインストールしてください。第三者サイトの利用は避けてください。
 
@@ -150,4 +150,14 @@ Copyright © 2026 FontFixer. All rights reserved.
 
 FontFixerが役に立った場合は、プロジェクトの支援をご検討ください！
 
-**[👉 ライセンスキーを取得](https://www.annmax1983.com/checkout.html?plugin=fontfixer)**
+**[👉 ライセンスキーを取得](https://annmax1983.com/checkout?plugin=fontfixer)**
+
+---
+
+## リンク
+
+- **公式サイト:** https://annmax1983.com/
+- **この拡張機能:** https://annmax1983.com/extensions/fontfixer
+- **プライバシーポリシー:** https://annmax1983.com/privacy
+- **お問い合わせ:** support@annmax1983.com
+- **☕ 開発を支援（Ko-fi）:** https://ko-fi.com/annmax?ref=fontfixer

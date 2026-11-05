@@ -73,7 +73,7 @@ De nombreux sites web utilisent des petites polices, floues ou difficiles à lir
 |---|---|
 | Chrome Web Store | [Installer dans Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge Add-ons | [Installer dans Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
-| Modules complémentaires Firefox (AMO) | 🔜 En cours d’examen — le lien sera ajouté après publication |
+| Modules complémentaires Firefox (AMO) | [Installer pour Firefox](https://addons.mozilla.org/firefox/addon/fontfixer/) |
 
 > Installez uniquement depuis les boutiques officielles ci-dessus — évitez les sites de téléchargement tiers.
 
@@ -150,8 +150,18 @@ Copyright © 2026 FontFixer. Tous droits réservés.
 
 Si FontFixer vous est utile, n'hésitez pas à soutenir le projet !
 
-**[👉 Obtenir une clé de licence](https://www.annmax1983.com/checkout.html?plugin=fontfixer)**
+**[👉 Obtenir une clé de licence](https://annmax1983.com/checkout?plugin=fontfixer)**
 
 ---
 
 > **Note :** Ce dépôt est destiné à la **présentation du projet uniquement**. Il ne contient pas le code source complet, le manifest, les icônes ou les scripts de build. Le code source complet ne sera **pas** publié ici.
+
+---
+
+## Liens
+
+- **Site officiel:** https://annmax1983.com/
+- **Cette extension:** https://annmax1983.com/extensions/fontfixer
+- **Confidentialité:** https://annmax1983.com/privacy
+- **Contact:** support@annmax1983.com
+- **☕ Soutenir le projet (Ko-fi):** https://ko-fi.com/annmax?ref=fontfixer

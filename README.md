@@ -73,7 +73,7 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 |---|---|
 | Chrome Web Store | [Install for Chrome](https://chromewebstore.google.com/detail/fdcanpeipbhjnjimogebfdfkmmchoiib) |
 | Microsoft Edge Add-ons | [Install for Edge](https://microsoftedge.microsoft.com/addons/detail/npoflpnnknpmehccioccmhifddfaeahj) |
-| Firefox Add-ons (AMO) | 🔜 Under review — link will be added once the listing is live |
+| Firefox Add-ons (AMO) | [Install for Firefox](https://addons.mozilla.org/firefox/addon/fontfixer/) |
 
 > Install only from the official stores above — avoid third-party download sites.
 
@@ -151,8 +151,18 @@ Copyright © 2026 FontFixer. All rights reserved.
 
 If you find FontFixer helpful, consider supporting the project!
 
-**[👉 Get a License Key](https://www.annmax1983.com/checkout.html?plugin=fontfixer)**
+**[👉 Get a License Key](https://annmax1983.com/checkout?plugin=fontfixer)**
 
 ---
 
 > **Note:** This repository is a project showcase. The full source code is not published here.
+
+---
+
+## Links
+
+- **Official website:** https://annmax1983.com/
+- **This extension:** https://annmax1983.com/extensions/fontfixer
+- **Privacy policy:** https://annmax1983.com/privacy
+- **Contact:** support@annmax1983.com
+- **☕ Support this project (Ko-fi):** https://ko-fi.com/annmax?ref=fontfixer
