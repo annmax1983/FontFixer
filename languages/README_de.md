@@ -140,9 +140,19 @@ Diese Erweiterung passt nur lokal die visuelle Darstellung von Webseiten für ei
 
 ---
 
+## Hinweis zum Quellcode
+
+> ⚠️ **Dieses Repository dient ausschließlich der Projektpräsentation — der vollständige Quellcode wird hier nicht veröffentlicht.** Es enthält nur die Nutzungsdokumentation, die Release-Notizen und Support-Informationen zur Erweiterung.
+
+> 📥 **Installation ausschließlich über die offiziellen Browser-Stores:** Chrome Web Store · Microsoft Edge Add-ons · Firefox-Add-ons (AMO). Von hier werden keine Offline-Installer verteilt.
+
+---
+
 ## Lizenz
 
 Copyright © 2026 FontFixer. Alle Rechte vorbehalten.
+
+Diese Software ist proprietär und quellgeschlossen. Ohne vorherige schriftliche Genehmigung des Autors ist das Dekompilieren, Reverse-Engineering, Knacken, Verändern, Neuverpacken, Weiterverbreiten oder Weiterverkaufen der Software (ganz oder teilweise) streng untersagt.
 
 ---
 
@@ -151,10 +161,6 @@ Copyright © 2026 FontFixer. Alle Rechte vorbehalten.
 Wenn dir FontFixer hilft, unterstütze das Projekt gerne!
 
 **[👉 Lizenzschlüssel erhalten](https://annmax1983.com/checkout?plugin=fontfixer)**
-
----
-
-> **Hinweis:** Dieses Repository dient ausschließlich der **Projektpräsentation**. Es enthält nicht den vollständigen Quellcode, das Manifest, Icons oder Build-Skripte. Der vollständige Quellcode wird hier **nicht** veröffentlicht.
 
 ---
 

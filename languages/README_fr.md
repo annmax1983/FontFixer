@@ -140,9 +140,19 @@ Cette extension ajuste uniquement en local le style de rendu visuel des pages we
 
 ---
 
+## Avis sur le code source
+
+> ⚠️ **Ce dépôt sert uniquement à la présentation du projet — le code source complet n'y est pas publié.** Il ne contient que la documentation d'utilisation, les notes de version et les informations d'assistance de l'extension.
+
+> 📥 **Téléchargement et installation uniquement depuis les boutiques officielles :** Chrome Web Store · Microsoft Edge Add-ons · Modules complémentaires Firefox (AMO). Aucun installateur hors ligne n'est distribué ici.
+
+---
+
 ## Licence
 
 Copyright © 2026 FontFixer. Tous droits réservés.
+
+Ce logiciel est propriétaire et à code fermé. Sans autorisation écrite préalable de l'auteur, la décompilation, l'ingénierie inverse, le crackage, la modification, le reconditionnement, la redistribution ou la revente du logiciel (en tout ou en partie) sont strictement interdites.
 
 ---
 
@@ -151,10 +161,6 @@ Copyright © 2026 FontFixer. Tous droits réservés.
 Si FontFixer vous est utile, n'hésitez pas à soutenir le projet !
 
 **[👉 Obtenir une clé de licence](https://annmax1983.com/checkout?plugin=fontfixer)**
-
----
-
-> **Note :** Ce dépôt est destiné à la **présentation du projet uniquement**. Il ne contient pas le code source complet, le manifest, les icônes ou les scripts de build. Le code source complet ne sera **pas** publié ici.
 
 ---
 
