@@ -42,7 +42,8 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 | Feature | Description |
 |---------|-------------|
 | ♾️ **Unlimited Configs** | Save font settings for unlimited websites |
-| 📤 **Import / Export** | Backup and restore your font configurations across devices |
+| 🔄 **Account Sync** | Your site configs follow the browser account you are signed in to, so a second computer picks them up automatically |
+| 📤 **Import / Export** | Move configurations between accounts or browsers, or keep a manual backup |
 
 ---
 
@@ -63,7 +64,7 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 | Mozilla Firefox | ✅ Fully supported | Manifest V3, Firefox 140+ (desktop) |
 | Other Chromium-based browsers | ✅ Should work | Manifest V3 |
 
-> **Feature parity:** the only difference is local (system) font detection. Chrome and Edge expose the Local Font Access API (`queryLocalFonts`), so the **🔄** button can load every font installed on your device. Firefox does not implement that API, so the button is hidden there and you choose from the 3 built-in fonts instead. Font size, text colour, link colour, per-site memory, Auto Apply and Reset behave identically on all three browsers.
+> **Feature parity:** the only difference is local (system) font detection. Chrome and Edge expose the Local Font Access API (`queryLocalFonts`), so the **🔄** button can load every font installed on your device. Firefox does not implement that API, so the button is hidden there and you choose from the 3 built-in fonts instead. Font size, text colour, link colour, per-site memory, Auto Apply and Reset behave identically on all three browsers. Pro account sync works on every build — it uses whichever account the browser itself is signed in to.
 
 ---
 
@@ -87,12 +88,12 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 2. Select a font from the dropdown — 3 built-in fonts are always available; on Chrome / Edge click **🔄** to load fonts installed on your device (Firefox has no font-enumeration API, so the **🔄** button is not shown there)
 3. Adjust font size with the slider (50%–500%)
 4. Optionally tick **Text Color** / **Link Color** to override colors (off = never touch page colors)
-5. Click **Apply & Save** — settings apply instantly and are stored for this site
+5. Click **Save for this site** — settings apply instantly and are stored for this site
 
 ### Auto Apply
 
 - Turn on the **Auto Apply** switch to automatically re-apply this site's saved settings every time you visit it
-- With Auto Apply off, settings only apply when you open the popup and click **Apply & Save**
+- With Auto Apply off, settings only apply when you open the popup and click **Save for this site**
 
 ### Reset
 
@@ -103,15 +104,17 @@ Many websites use small, blurry, or hard-to-read fonts. FontFixer lets you adjus
 ## How It Works
 
 1. Pick a font, then tune size and colours in the popup.
-2. Click **Apply & Save** — the page restyles straight away, no reload.
-3. Your settings are stored in your browser, one set per site.
+2. Click **Save for this site** — the page restyles straight away, no reload.
+3. Your settings are stored in your browser, one set per site. With Pro, each site is also mirrored into your browser account's sync storage.
 4. With **Auto Apply** on, that site's settings are re-applied every time you visit it.
 
 All style processing happens locally in your browser. Two network requests can happen: the **optional** licence check — when you activate a Pro licence key, FontFixer contacts the licence server with your key and basic browser metadata (browser, language, timezone) — and, on the Firefox build only, the download of the two bundled webfonts (Noto Sans, Source Han Sans) from the jsDelivr CDN when you select them for the first time. No webpage content is ever read or uploaded.
 
+There is one non-local place a saved setting can end up, and only on Pro: with a licence, each site is mirrored into `chrome.storage.sync` / `browser.storage.sync`, which the browser replicates through the account you are signed in to (Google for Chrome, Microsoft for Edge, your Firefox account for Firefox). The mirrored record is the same small object kept locally — font name, size, two colours — never page content. Sign out, disable sync, exceed the quota or let the licence lapse and the write simply fails: the local copy is never touched, and nothing is ever deleted locally because of a sync event.
+
 **Note for Local Font Access:** Local fonts use the Local Font Access API — no manifest permission needed. Chrome and Edge show a permission prompt at runtime, and the API only runs during a user click, so open the popup and click the **🔄 refresh button** to load your local fonts. Only font display names are read — font source files are not extracted, copied or uploaded. You can revoke the grant in browser settings at any time. Firefox does not implement this API, so that button is hidden and only the 3 built-in fonts are offered; no font-related permission is requested at all on Firefox.
 
-**Auto Apply Rule:** Automatic style injection is per site. Turn on the **Auto Apply** switch in the popup to re-apply that site's settings on every visit; with it off, settings apply only when you click **Apply & Save**.
+**Auto Apply Rule:** Automatic style injection is per site. Turn on the **Auto Apply** switch in the popup to re-apply that site's settings on every visit; with it off, settings apply only when you click **Save for this site**.
 
 ---
 
@@ -129,6 +132,7 @@ The extension only reads the name list of fonts installed on your local device v
 - `scripting` — Injects CSS to change page fonts. Does not read page text or data.
 - `activeTab` — Only accesses the current tab when you interact with the extension.
 - `<all_urls>` — Lets the extension re-apply your saved font styles automatically on sites you've configured. It never reads or uploads page content.
+- `storage.sync` — Pro only. Mirrors each saved site into the browser account's own sync storage, so a second computer picks it up. The records are the same small per-site objects kept locally (font, size, two colours) — no page content, no identifiers. Signed out, sync disabled or quota exceeded: the write fails silently and the local copy is never touched.
 - **Local Font Access** — Chrome / Edge only. No manifest permission; access is granted at runtime via a browser prompt. Reads only display names, never font files. Can be revoked at any time. Firefox does not offer this API, so nothing is requested there.
 - **Firefox** — the same core permissions apply (`storage`, `scripting`, `activeTab`, `<all_urls>`), plus `https://api.annmax1983.com/*` for licence checks and `https://cdn.jsdelivr.net/*` to load the two built-in webfonts. Firefox shows them in *Add-ons Manager → Permissions* where you can review or revoke them.
 - No tracking, no analytics. The only network requests are license activation/validation when you use a Pro license key, and — on Firefox — the one-off download of the two built-in webfonts from jsDelivr.
